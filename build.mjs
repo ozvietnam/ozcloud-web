@@ -207,7 +207,153 @@ ghi('ai-van-hanh', vo({
 </div></section>`,
 }));
 
-const urls = ['/', '/blog/', '/ai-van-hanh/', ...bai.map(b => `/blog/${b.slug}/`)];
+// ---------- trang dat mua (thu tien truoc) ----------
+const TT = JSON.parse(fs.readFileSync(path.join(GOC, 'du-lieu', 'thanh-toan.json'), 'utf8'));
+{
+  const ct = TT.chuong_trinh || {};
+  const giam = Number(ct.giam_gia_phan_tram || 0);
+  const conLai = Math.max(0, Number(ct.so_suat || 0) - Number(ct.da_ban || 0));
+  const sanSang = TT.bat === true && TT.ngan_hang && TT.ngan_hang.so_tai_khoan;
+
+  const duLieuGoi = goi.filter(g => Number(String(g.gia_thang).replace(/\D/g, '')) > 0).map(g => ({
+    ten: g.ten, ram: g.ram, vcpu: g.vcpu, disk: g.disk,
+    thang: Number(String(g.gia_thang).replace(/\D/g, '')),
+  }));
+
+  const than = sanSang ? `
+  <div class="box" style="margin-bottom:20px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+      <div><b style="font-size:18px">${esc(ct.ten)}</b><div class="src" style="margin-top:4px">${esc(ct.mo_ta)}</div></div>
+      <div style="text-align:right"><b style="font-size:26px;color:var(--acc)">còn ${conLai}</b><div class="src">suất trên tổng ${esc(ct.so_suat)}</div></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="box">
+      <h3 style="margin-bottom:16px">1. Chọn gói và kỳ trả trước</h3>
+      <div class="chon" id="chon-goi"></div>
+      <h3 style="margin:22px 0 12px">Kỳ trả trước</h3>
+      <div class="chon" id="chon-ky">
+        <button class="o" data-ky="3">3 tháng</button>
+        <button class="o" data-ky="6">6 tháng</button>
+        <button class="o" data-ky="12">12 tháng</button>
+      </div>
+      <div class="tong">
+        <div class="dong"><span>Giá gốc</span><b id="goc">—</b></div>
+        <div class="dong"><span>Giảm đặt trước ${giam}%</span><b id="giam" style="color:var(--acc)">—</b></div>
+        <div class="dong lon"><span>Cần chuyển</span><b id="tong">—</b></div>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3 style="margin-bottom:16px">2. Thông tin của bạn</h3>
+      <form class="form" style="max-width:none" id="don" action="https://formsubmit.co/${esc(VH.email_nhan_lead || 'ceo@ngantin.vn')}" method="POST">
+        <input type="hidden" name="_subject" value="OZ Cloud - DON DAT TRUOC">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="ma_don" id="f-ma">
+        <input type="hidden" name="goi" id="f-goi">
+        <input type="hidden" name="ky_tra_truoc" id="f-ky">
+        <input type="hidden" name="so_tien" id="f-tien">
+        <input type="text" name="ho_ten" placeholder="Họ tên" required>
+        <input type="email" name="email" placeholder="Email — nơi nhận thông tin máy" required>
+        <input type="text" name="zalo" placeholder="Số Zalo" required>
+        <textarea name="ghi_chu" rows="2" placeholder="Bạn định dùng VPS này làm gì? (không bắt buộc)"></textarea>
+        <label class="tick"><input type="checkbox" required> Tôi đã đọc và đồng ý với điều khoản đặt trước bên dưới</label>
+        <button type="submit" class="btn btn-p">Xác nhận đơn và lấy mã chuyển khoản</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:20px" id="khu-qr">
+    <h3 style="margin-bottom:6px">3. Chuyển khoản</h3>
+    <p class="src" style="margin-bottom:16px">Mã đơn của bạn — <b style="color:var(--acc);font-size:16px" id="ma-hien">—</b> — phải ghi đúng trong nội dung chuyển khoản để hệ thống nhận ra bạn.</p>
+    <div class="two-col">
+      <div style="text-align:center">
+        <img id="qr" alt="Mã QR chuyển khoản" style="width:100%;max-width:300px;border-radius:12px;background:#fff;padding:8px">
+        <div class="src" style="margin-top:10px">Quét bằng app ngân hàng bất kỳ</div>
+      </div>
+      <div>
+        <table>
+          <tr><td>Ngân hàng</td><td><b>${esc(TT.ngan_hang.ma_ngan_hang)}</b></td></tr>
+          <tr><td>Số tài khoản</td><td><b class="mono" style="font-size:15px">${esc(TT.ngan_hang.so_tai_khoan)}</b></td></tr>
+          <tr><td>Chủ tài khoản</td><td><b>${esc(TT.ngan_hang.ten_chu_tai_khoan)}</b></td></tr>
+          <tr><td>Số tiền</td><td><b id="tien-ck">—</b></td></tr>
+          <tr><td>Nội dung</td><td><b class="mono" id="nd-ck">—</b></td></tr>
+        </table>
+        <p class="src" style="margin-top:14px">Chuyển xong bạn cứ yên tâm. Chúng tôi đối soát và gửi email xác nhận trong vòng 24 giờ. Nếu quá 24 giờ chưa thấy email, nhắn Zalo cho chúng tôi.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  var GOI = ${JSON.stringify(duLieuGoi)}, GIAM = ${giam};
+  var g = null, ky = 3, ma = null;
+  var vnd = function (n) { return n.toLocaleString('vi-VN') + 'đ'; };
+  function sinhMa() {
+    var c = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', s = 'OZ';
+    for (var i = 0; i < 8; i++) s += c[Math.floor(Math.random() * c.length)];
+    return s;
+  }
+  var boGoi = document.getElementById('chon-goi');
+  GOI.forEach(function (x, i) {
+    var b = document.createElement('button');
+    b.className = 'o'; b.dataset.i = i;
+    b.innerHTML = '<b>' + x.ten + '</b><span>' + x.ram + ' RAM · ' + vnd(x.thang) + '/th</span>';
+    boGoi.appendChild(b);
+  });
+  function ve() {
+    var goc = g ? g.thang * ky : 0;
+    var tien = Math.round(goc * (100 - GIAM) / 100);
+    document.getElementById('goc').textContent = g ? vnd(goc) : '—';
+    document.getElementById('giam').textContent = g ? '-' + vnd(goc - tien) : '—';
+    document.getElementById('tong').textContent = g ? vnd(tien) : '—';
+    document.getElementById('f-goi').value = g ? g.ten : '';
+    document.getElementById('f-ky').value = ky + ' thang';
+    document.getElementById('f-tien').value = tien;
+    if (g && ma) {
+      document.getElementById('ma-hien').textContent = ma;
+      document.getElementById('tien-ck').textContent = vnd(tien);
+      document.getElementById('nd-ck').textContent = ma;
+      document.getElementById('qr').src = 'https://img.vietqr.io/image/${esc(TT.ngan_hang.ma_ngan_hang)}-${esc(TT.ngan_hang.so_tai_khoan)}-compact2.png?amount=' + tien + '&addInfo=' + ma + '&accountName=' + encodeURIComponent('${esc(TT.ngan_hang.ten_chu_tai_khoan)}');
+    }
+  }
+  boGoi.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return; e.preventDefault();
+    [].forEach.call(boGoi.children, function (x) { x.classList.remove('chon-roi'); });
+    b.classList.add('chon-roi'); g = GOI[b.dataset.i]; ve();
+  });
+  var boKy = document.getElementById('chon-ky');
+  boKy.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return; e.preventDefault();
+    [].forEach.call(boKy.children, function (x) { x.classList.remove('chon-roi'); });
+    b.classList.add('chon-roi'); ky = +b.dataset.ky; ve();
+  });
+  boKy.children[0].classList.add('chon-roi');
+  document.getElementById('don').addEventListener('submit', function (e) {
+    if (!g) { e.preventDefault(); alert('Bạn chọn gói trước đã nhé.'); return; }
+    ma = sinhMa(); document.getElementById('f-ma').value = ma; ve();
+  });
+  ve();
+  </script>` : `
+  <div class="warn-box"><b>Chưa mở nhận đặt trước.</b> Chương trình khoá giá 12 tháng đã sẵn sàng nhưng chưa bật vì chủ doanh nghiệp chưa cấu hình tài khoản nhận tiền. Bạn để lại liên hệ ở <a href="/#dang-ky">trang chủ</a>, chúng tôi báo ngay khi mở.</div>`;
+
+  ghi('dat-mua', vo({
+    title: 'Đặt trước — khoá giá 12 tháng | OZ Cloud',
+    description: 'Đặt trước VPS OZ Cloud, khoá nguyên giá trong 12 tháng và giảm thêm 20%. Chưa giao được máy đúng hạn thì hoàn 100%.',
+    canonical: '/dat-mua/',
+    body: `<section><div class="wrap">
+      <div class="s-head"><h1 style="font-size:36px">Đặt trước — khoá giá 12 tháng</h1>
+      <p>Nói thẳng trước khi bạn trả tiền: <b>máy chưa lắp xong</b>. Bạn đang đặt trước một dịch vụ dự kiến giao ngày 10/10/2026. Đổi lại bạn được giảm ${giam}% và khoá giá 12 tháng — và nếu chúng tôi trễ hẹn quá một tháng, bạn lấy lại toàn bộ tiền.</p></div>
+      ${than}
+      <h2 style="margin-top:48px">Điều khoản đặt trước</h2>
+      <div class="box"><ol class="dieu-khoan">${(TT.dieu_khoan || []).map(d => `<li>${esc(d)}</li>`).join('')}</ol></div>
+      <p class="src" style="margin-top:18px">Có gì chưa rõ, nhắn cho chúng tôi trước khi chuyển tiền. Chúng tôi thà mất một đơn còn hơn để bạn hiểu nhầm.</p>
+    </div></section>`,
+  }));
+}
+
+const urls = ['/', '/blog/', '/ai-van-hanh/', '/dat-mua/', ...bai.map(b => `/blog/${b.slug}/`)];
 fs.writeFileSync(path.join(RA, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map(u => `  <url><loc>${SITE}${u}</loc></url>`).join('\n') + `\n</urlset>\n`);
