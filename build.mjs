@@ -90,7 +90,7 @@ ghi('', vo({
   <div class="h-tag">● Máy chủ đặt tại Việt Nam — ping nội địa dưới 20ms</div>
   <h1>Chỗ cho agent<br><em>của bạn sống</em></h1>
   <p class="lead">Chúng tôi không bán VPS cài sẵn OpenClaw rồi để bạn tự bơi. Chúng tôi bán chỗ chạy agent — do người đang nuôi một đội agent thật 24/7 vận hành. Toàn bộ công ty này đang được chính đội AI đó điều hành.</p>
-  <div class="h-cta"><a href="#bang-gia" class="btn btn-p">Xem bảng giá</a><a href="/ai-van-hanh/" class="btn btn-g">Xem AI đang vận hành</a></div>
+  <div class="h-cta"><a href="/dat-mua/" class="btn btn-p">Đặt trước, khoá giá 12 tháng</a><a href="/ai-van-hanh/" class="btn btn-g">Xem AI đang vận hành</a></div>
   <div class="h-stats">
     <div class="stat"><b>${esc(VH.so_agent ?? 3)}</b><small>Agent chạy 24/7 tại trạm của chúng tôi</small></div>
     <div class="stat"><b>${esc(bai.length)}</b><small>Bài viết do agent tự sản xuất</small></div>
@@ -102,6 +102,7 @@ ghi('', vo({
 <section id="bang-gia"><div class="wrap">
   <div class="s-head"><h2>Bảng giá</h2><p>Mua 6 tháng giảm 10%. Gói nào chạy được OpenClaw thì chúng tôi nói thẳng — gói nào không, cũng nói thẳng.</p></div>
   <div class="grid">${theGoi}</div>
+  <p style="margin-top:22px"><a href="/dat-mua/" class="btn btn-p">Đặt trước — giảm 20%, khoá giá 12 tháng</a></p>
   <div class="warn-box"><b>Nói thật về gói 49k:</b> 1GB RAM <b>không đủ chạy OpenClaw</b> — tài liệu chính thức ghi rõ 1GB sẽ bị OOM-kill (exit code 137), tối thiểu 2GB và 4GB mới thoải mái. Gói 49k dành cho người học Linux hoặc chạy web nhỏ. Muốn chạy agent thì lấy Pro 4GB.</div>
 </div></section>
 

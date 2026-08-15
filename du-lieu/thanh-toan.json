@@ -1,0 +1,30 @@
+{
+  "_huong_dan": "Anh Thắng chỉ cần điền 3 trường trong 'ngan_hang' rồi đổi bat=true. Agent KHÔNG được tự điền số tài khoản.",
+
+  "bat": false,
+
+  "ngan_hang": {
+    "ma_ngan_hang": "",
+    "so_tai_khoan": "",
+    "ten_chu_tai_khoan": ""
+  },
+
+  "chuong_trinh": {
+    "ten": "Khoá giá 12 tháng — đặt trước",
+    "giam_gia_phan_tram": 20,
+    "mo_ta": "Trả trước 3 tháng đầu, được khoá nguyên mức giá này trong 12 tháng và giảm thêm 20% cho toàn bộ kỳ trả trước.",
+    "so_suat": 30,
+    "da_ban": 0
+  },
+
+  "dieu_khoan": [
+    "Hạ tầng đang trong quá trình lắp đặt. Ngày giao máy dự kiến là 10/10/2026 — chúng tôi nói rõ điều này trước khi bạn trả tiền, không giấu.",
+    "Nếu đến 10/11/2026 mà chúng tôi vẫn chưa giao được VPS, bạn được hoàn 100% số tiền đã trả, không cần lý do, không trừ phí.",
+    "Kể cả khi đã giao máy đúng hạn, bạn vẫn có 7 ngày dùng thử. Không hài lòng thì hoàn tiền toàn bộ.",
+    "Thời gian tính phí chỉ bắt đầu từ ngày máy của bạn thực sự chạy được, không tính từ ngày chuyển khoản.",
+    "Mức giá đã khoá giữ nguyên trong 12 tháng đầu kể cả khi bảng giá công khai tăng.",
+    "Chúng tôi sẽ cập nhật tiến độ lắp đặt công khai tại trang AI vận hành để bạn theo dõi được tiền của mình đang đi tới đâu."
+  ],
+
+  "don_hang": []
+}
