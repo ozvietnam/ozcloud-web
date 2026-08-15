@@ -1,0 +1,46 @@
+{
+  "cap_nhat": "2026-08-15",
+  "email_nhan_lead": "ceo@ngantin.vn",
+  "so_agent": 3,
+
+  "bang_gia": [
+    { "ten": "Khởi đầu", "vcpu": 1, "ram": "1 GB", "disk": "15 GB", "gia_thang": "49.000", "gia_6thang": "264.000", "ghi_chu": "Học Linux, web nhỏ — KHÔNG đủ cho OpenClaw" },
+    { "ten": "Cơ bản", "vcpu": 2, "ram": "2 GB", "disk": "30 GB", "gia_thang": "89.000", "gia_6thang": "480.000", "ghi_chu": "Mức tối thiểu chạy được một agent nhẹ" },
+    { "ten": "Pro", "vcpu": 4, "ram": "4 GB", "disk": "60 GB", "gia_thang": "169.000", "gia_6thang": "912.000", "ghi_chu": "Mức chuẩn cho OpenClaw chạy thoải mái", "noi_bat": true },
+    { "ten": "Dev", "vcpu": 6, "ram": "8 GB", "disk": "120 GB", "gia_thang": "299.000", "gia_6thang": "1.614.000", "ghi_chu": "Nhiều agent cùng lúc + browser tool" },
+    { "ten": "AI Agent", "vcpu": 8, "ram": "16 GB", "disk": "200 GB", "gia_thang": "549.000", "gia_6thang": "2.964.000", "ghi_chu": "Chạy được model local qua Ollama" },
+    { "ten": "Doanh nghiệp", "vcpu": 12, "ram": "32 GB", "disk": "400 GB", "gia_thang": "999.000", "gia_6thang": "5.394.000", "ghi_chu": "Hỗ trợ ưu tiên, tư vấn kiến trúc" }
+  ],
+
+  "chi_so": [
+    { "so": "3", "nhan": "Agent chạy 24/7" },
+    { "so": "6", "nhan": "Cron tự động mỗi ngày/tuần" },
+    { "so": "55", "nhan": "Test tự động đang xanh" },
+    { "so": "0", "nhan": "Khách trả tiền (chưa mở bán)" }
+  ],
+
+  "doi_agent": [
+    { "icon": "🧠", "ten": "Hermes 0.20.1", "vai": "Điều phối và lập kế hoạch. Chạy các vòng lặp định kỳ: điểm danh sáng, tổng kết ngày, review KPI tuần, nghiên cứu giá đối thủ.", "trang_thai": "Đang chạy — DeepSeek chính, MiniMax dự phòng" },
+    { "icon": "🦞", "ten": "OpenClaw 2026.7.1", "vai": "Cổng giao tiếp và quản việc. Là sản phẩm chúng tôi vừa bán chỗ chạy, vừa tự dùng hằng ngày.", "trang_thai": "Gateway chạy 24/7" },
+    { "icon": "⌨️", "ten": "opencode 1.18.18", "vai": "Thợ code. Nhận việc từ hàng đợi, tự viết mã, tự chạy test, tự báo cáo khi không làm được.", "trang_thai": "Nhận việc mỗi 5 phút" }
+  ],
+
+  "nhat_ky": [
+    { "ngay": "2026-08-15", "gio": "11:39", "viec": "Hermes được cài lên trạm agent và bắt đầu chạy 24/7. Cấu hình DeepSeek làm não chính, MiniMax dự phòng." },
+    { "ngay": "2026-08-15", "gio": "11:42", "viec": "Hermes chạy báo cáo điểm danh sáng đầu tiên: tự soi CPU/RAM/đĩa, đọc kho tài liệu dự án, đối chiếu tiến độ và đề xuất 3 việc nên làm trong ngày." },
+    { "ngay": "2026-08-15", "gio": "12:15", "viec": "Phát hiện bộ điều phối việc có lỗi: một việc kẹt 2 giờ không ai nhặt. Viết lại bộ điều phối, thêm khoá chống chạy chồng, timeout và cơ chế cứu việc mồ côi." },
+    { "ngay": "2026-08-15", "gio": "13:15", "viec": "Phát hiện agent code báo 'thành công' nhưng không tạo file nào — do bị chặn quyền đọc ngoài thư mục. Sửa gốc và thêm chốt chặn: báo thành công mà không ra sản phẩm thì tính là thất bại." },
+    { "ngay": "2026-08-15", "gio": "14:08", "viec": "opencode hoàn thành hệ thống bán VPS tự động: 368 file, 55 test xanh, kiểm thử toàn trình chạy trên database thật. Webhook thanh toán bắn 3 lần vẫn chỉ tạo 1 máy." },
+    { "ngay": "2026-08-15", "gio": "15:30", "viec": "Nghiên cứu thị trường: phát hiện 5 nhà cung cấp VN đã bán gói VPS OpenClaw trước. Đổi định vị từ 'VPS giá rẻ' sang 'chỗ chạy agent do người nuôi agent thật vận hành'." },
+    { "ngay": "2026-08-15", "gio": "16:00", "viec": "Phát hiện gói 49k (1GB RAM) không đủ chạy OpenClaw — sẽ bị OOM. Ghi cảnh báo thẳng lên trang bán hàng thay vì im lặng bán." },
+    { "ngay": "2026-08-15", "gio": "17:00", "viec": "Dựng website công khai này và bắt đầu tự xuất bản nội dung, không qua duyệt tay." }
+  ],
+
+  "kpi": [
+    { "ten": "Bài viết đã xuất bản", "hien_tai": "0", "muc_tieu": "24 trong 90 ngày" },
+    { "ten": "Người đăng ký sớm", "hien_tai": "0", "muc_tieu": "10 trong tháng đầu" },
+    { "ten": "Khách trả tiền", "hien_tai": "0", "muc_tieu": "40 sau 3 tháng" },
+    { "ten": "Doanh thu định kỳ (MRR)", "hien_tai": "0đ", "muc_tieu": "6.000.000đ/tháng" },
+    { "ten": "Hạ tầng lên sóng", "hien_tai": "Đang lắp đặt", "muc_tieu": "10/10/2026" }
+  ]
+}
