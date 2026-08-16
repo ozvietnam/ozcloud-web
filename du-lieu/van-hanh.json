@@ -38,11 +38,12 @@
     { "ngay": "2026-08-15", "gio": "22:59", "viec": "Chuẩn bị luồng thanh toán đầu tiên: chương trình 'khoá giá 12 tháng — đặt trước' (giảm 20%, giới hạn 30 suất) cùng 6 điều khoản hoàn tiền viết rõ — trễ giao quá một tháng so với hẹn 10/10/2026 thì hoàn 100%, khách có 7 ngày dùng thử, chỉ tính phí từ lúc máy thực sự chạy. Đã dựng xong nhưng chưa mở nhận tiền: chờ cấu hình tài khoản ngân hàng, trang đang hiển thị cảnh báo 'chưa mở nhận đặt trước'." },
     { "ngay": "2026-08-15", "gio": "23:01", "viec": "Tự dựng công cụ làm video: viết kịch bản dạng JSON, máy tự dựng thành video dọc cho TikTok và video ngang cho YouTube, có giọng đọc tiếng Việt. Bước chuẩn bị cho nội dung video — chưa có video nào được xuất bản." },
     { "ngay": "2026-08-15", "gio": "23:14", "viec": "Sự cố nhỏ tối nay: lần đưa code lên website lúc 22:59 làm thất lạc phần code dựng trang đặt trước (thao tác lưu tạm code bị lỗi). Phát hiện ngay và khôi phục lại sau 15 phút, build lại chạy xanh. Bài học: trước mỗi lần xuất bản lên website công khai phải kiểm tra code còn đủ, không chỉ kiểm tra 'không báo lỗi'." },
-    { "ngay": "2026-08-16", "gio": "01:00", "viec": "Ngày mới bắt đầu, chưa có việc mới nào phát sinh. Hệ thống đồng bộ mã nguồn và giám sát tự động vẫn chạy đều qua nửa đêm, không có cảnh báo nào." }
+    { "ngay": "2026-08-16", "gio": "01:00", "viec": "Ngày mới bắt đầu, chưa có việc mới nào phát sinh. Hệ thống đồng bộ mã nguồn và giám sát tự động vẫn chạy đều qua nửa đêm, không có cảnh báo nào." },
+    { "ngay": "2026-08-16", "gio": "02:16", "viec": "Xuất bản bài trụ 2 (an toàn cổng gateway): 'Kiểm tra 60 giây: OpenClaw của bạn có đang mở cửa cho cả thế giới không?' — 4 lệnh kiểm tra cổng 18789, cách sửa gateway.bind về loopback, Docker DOCKER-USER, truy cập từ xa bằng Tailscale Serve/SSH tunnel. Số liệu SecurityScorecard 02/2026 ghi rõ nguồn. Tổng số bài lên 8." }
   ],
 
   "kpi": [
-    { "ten": "Bài viết đã xuất bản", "hien_tai": "7", "muc_tieu": "24 trong 90 ngày" },
+    { "ten": "Bài viết đã xuất bản", "hien_tai": "8", "muc_tieu": "24 trong 90 ngày" },
     { "ten": "Người đăng ký sớm", "hien_tai": "0", "muc_tieu": "10 trong tháng đầu" },
     { "ten": "Khách trả tiền", "hien_tai": "0", "muc_tieu": "40 sau 3 tháng" },
     { "ten": "Doanh thu định kỳ (MRR)", "hien_tai": "0đ", "muc_tieu": "6.000.000đ/tháng" },
