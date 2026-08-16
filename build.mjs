@@ -90,7 +90,7 @@ ghi('', vo({
   <div class="h-tag">● Máy chủ đặt tại Việt Nam — ping nội địa dưới 20ms</div>
   <h1>Chỗ cho agent<br><em>của bạn sống</em></h1>
   <p class="lead">Chúng tôi không bán VPS cài sẵn OpenClaw rồi để bạn tự bơi. Chúng tôi bán chỗ chạy agent — do người đang nuôi một đội agent thật 24/7 vận hành. Toàn bộ công ty này đang được chính đội AI đó điều hành.</p>
-  <div class="h-cta"><a href="/dat-mua/" class="btn btn-p">Đặt trước, khoá giá 12 tháng</a><a href="/ai-van-hanh/" class="btn btn-g">Xem AI đang vận hành</a></div>
+  <div class="h-cta"><a href="/dat-mua/" class="btn btn-p">Đặt trước, khoá giá 12 tháng</a><a href="/chon-goi/" class="btn btn-g">Tôi cần gói nào?</a></div>
   <div class="h-stats">
     <div class="stat"><b>${esc(VH.so_agent ?? 3)}</b><small>Agent chạy 24/7 tại trạm của chúng tôi</small></div>
     <div class="stat"><b>${esc(bai.length)}</b><small>Bài viết do agent tự sản xuất</small></div>
@@ -103,7 +103,7 @@ ghi('', vo({
   <div class="s-head"><h2>Bảng giá</h2><p>Mua 6 tháng giảm 10%. Gói nào chạy được OpenClaw thì chúng tôi nói thẳng — gói nào không, cũng nói thẳng.</p></div>
   <div class="grid">${theGoi}</div>
   <p style="margin-top:22px"><a href="/dat-mua/" class="btn btn-p">Đặt trước — giảm 20%, khoá giá 12 tháng</a></p>
-  <div class="warn-box"><b>Nói thật về gói 49k:</b> 1GB RAM <b>không đủ chạy OpenClaw</b> — tài liệu chính thức ghi rõ 1GB sẽ bị OOM-kill (exit code 137), tối thiểu 2GB và 4GB mới thoải mái. Gói 49k dành cho người học Linux hoặc chạy web nhỏ. Muốn chạy agent thì lấy Pro 4GB.</div>
+  <div class="warn-box"><b>Nói thật về gói 49k:</b> 1GB RAM <b>không đủ chạy OpenClaw</b> — tài liệu chính thức ghi rõ 1GB sẽ bị OOM-kill (exit code 137), tối thiểu 2GB và 4GB mới thoải mái. Gói 49k dành cho người học Linux hoặc chạy web nhỏ. Muốn chạy agent thì lấy Pro 4GB. <a href="/chon-goi/" style="color:var(--acc)">Chưa chắc mình cần gì? Trả lời 4 câu →</a></div>
 </div></section>
 
 <section><div class="wrap">
@@ -353,7 +353,152 @@ const TT = JSON.parse(fs.readFileSync(path.join(GOC, 'du-lieu', 'thanh-toan.json
   }));
 }
 
-const urls = ['/', '/blog/', '/ai-van-hanh/', '/dat-mua/', ...bai.map(b => `/blog/${b.slug}/`)];
+// ---------- trang chon goi (cong cu tu van truoc ban hang) ----------
+{
+  const duLieuGoi = goi.map(g => ({
+    ten: g.ten, ram: Number(String(g.ram).replace(/\D/g, '')), vcpu: Number(g.vcpu),
+    disk: g.disk, thang: Number(String(g.gia_thang).replace(/\D/g, '')), ghi_chu: g.ghi_chu,
+  }));
+
+  ghi('chon-goi', vo({
+    title: 'Chọn gói VPS cho agent của bạn — công cụ tư vấn | OZ Cloud',
+    description: 'Trả lời 4 câu, biết ngay cần bao nhiêu RAM để chạy OpenClaw, gói nào hợp và tốn khoảng bao nhiêu tiền gọi mô hình mỗi tháng.',
+    canonical: '/chon-goi/',
+    body: `<section><div class="wrap">
+  <div class="s-head"><h1 style="font-size:36px">Chọn gói cho đúng ngay từ đầu</h1>
+  <p>Phần lớn người mới chọn sai ở cùng một chỗ: lấy gói rẻ nhất rồi máy chết lúc nửa đêm. Trả lời 4 câu, chúng tôi nói thẳng bạn cần gì — kể cả khi câu trả lời là "gói rẻ nhất của chúng tôi không hợp với bạn".</p></div>
+
+  <div class="two-col">
+    <div class="box">
+      <h3 style="margin-bottom:14px">1. Bạn định cho agent làm việc gì?</h3>
+      <div class="chon" id="c-viec">
+        <button class="o" data-ram="2" data-api="1"><b>Học thử, nghịch cho biết</b><span>Chưa chạy thật</span></button>
+        <button class="o" data-ram="4" data-api="2"><b>Trả khách Zalo, Facebook</b><span>Bot trực tin nhắn</span></button>
+        <button class="o" data-ram="4" data-api="2"><b>Tóm tắt, soạn báo cáo</b><span>Đọc mail, đọc file, viết lại</span></button>
+        <button class="o" data-ram="8" data-api="3"><b>Tự động hoá nội bộ nhiều bước</b><span>Nối nhiều hệ thống, chạy quy trình</span></button>
+        <button class="o" data-ram="8" data-api="4"><b>Chạy liên tục 24/7 không nghỉ</b><span>Theo dõi, cảnh báo, giao dịch</span></button>
+      </div>
+
+      <h3 style="margin:22px 0 12px">2. Mỗi ngày agent phải xử lý bao nhiêu lượt?</h3>
+      <div class="chon" id="c-luot">
+        <button class="o" data-ram="0" data-api="1"><b>Dưới 20</b><span>Cá nhân, thử nghiệm</span></button>
+        <button class="o" data-ram="0" data-api="2"><b>20 đến 100</b><span>Shop nhỏ</span></button>
+        <button class="o" data-ram="2" data-api="3"><b>100 đến 500</b><span>Shop đông khách</span></button>
+        <button class="o" data-ram="4" data-api="5"><b>Trên 500</b><span>Doanh nghiệp</span></button>
+      </div>
+
+      <h3 style="margin:22px 0 12px">3. Có muốn chạy mô hình ngay trên máy không?</h3>
+      <div class="chon" id="c-model">
+        <button class="o" data-ram="0" data-api="0"><b>Không, dùng dịch vụ ngoài</b><span>Rẻ hơn, dễ hơn</span></button>
+        <button class="o" data-ram="12" data-api="-2"><b>Có, muốn tự chủ dữ liệu</b><span>Cần rất nhiều bộ nhớ</span></button>
+      </div>
+
+      <h3 style="margin:22px 0 12px">4. Có cần agent tự mở trình duyệt không?</h3>
+      <div class="chon" id="c-browser">
+        <button class="o" data-ram="0" data-api="0"><b>Không cần</b><span>Chỉ nhắn tin, đọc file</span></button>
+        <button class="o" data-ram="2" data-api="0"><b>Có cần</b><span>Tự vào web lấy dữ liệu</span></button>
+      </div>
+    </div>
+
+    <div class="box" id="ket-qua">
+      <h3 style="margin-bottom:14px">Kết quả</h3>
+      <div id="chua"><p style="color:var(--tx2);font-size:15px">Trả lời cả 4 câu bên trái, kết quả hiện ở đây.</p></div>
+      <div id="hien" style="display:none">
+        <div class="tong" style="margin-top:0;border-top:none;padding-top:0">
+          <div class="dong"><span>Bộ nhớ RAM tối thiểu bạn cần</span><b id="r-ram">—</b></div>
+          <div class="dong"><span>Gói phù hợp</span><b id="r-goi" style="color:var(--acc)">—</b></div>
+          <div class="dong"><span>Tiền thuê máy</span><b id="r-tien">—</b></div>
+          <div class="dong"><span>Tiền gọi mô hình, ước tính</span><b id="r-api">—</b></div>
+          <div class="dong lon"><span>Tổng mỗi tháng, ước tính</span><b id="r-tong">—</b></div>
+        </div>
+        <div id="r-vi-sao" style="margin-top:18px;font-size:14.5px;color:var(--tx2)"></div>
+        <div id="r-canh-bao"></div>
+        <p style="margin-top:20px"><a href="/dat-mua/" class="btn btn-p">Đặt trước gói này, khoá giá 12 tháng</a></p>
+        <p style="margin-top:10px"><a href="/#dang-ky" class="btn btn-g">Chưa chắc, để lại liên hệ tư vấn</a></p>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:48px">Vì sao chúng tôi hỏi về bộ nhớ trước tiên</h2>
+  <div class="box">
+    <p style="color:var(--tx2);font-size:15px;margin-bottom:14px">Tài liệu chính thức của OpenClaw ghi rõ: máy <b>1 GB bộ nhớ sẽ bị hệ thống tắt tiến trình</b> khi dựng, báo mã lỗi 137. Mức tối thiểu là 2 GB, và 4 GB mới gọi là thoải mái.</p>
+    <table>
+      <tr><th>Bộ nhớ</th><th>Chạy được không</th><th>Thực tế</th></tr>
+      <tr><td>1 GB</td><td style="color:var(--tx3)">Không</td><td>Chết giữa chừng, tưởng hỏng máy mà thật ra thiếu bộ nhớ</td></tr>
+      <tr><td>2 GB</td><td>Vừa đủ</td><td>Một agent nhẹ, ít việc, không chạy trình duyệt</td></tr>
+      <tr><td><b>4 GB</b></td><td><b>Thoải mái</b></td><td>Mức tài liệu chính thức gọi là dư dùng cho một trạm</td></tr>
+      <tr><td>8 GB trở lên</td><td>Rộng rãi</td><td>Nhiều agent cùng lúc, có trình duyệt tự động</td></tr>
+      <tr><td>16 GB trở lên</td><td>Rộng rãi</td><td>Bắt đầu chạy được mô hình ngay trên máy</td></tr>
+    </table>
+    <p class="src" style="margin-top:14px">Nguồn: tài liệu cài đặt và phần hỏi đáp chính thức của OpenClaw. Chúng tôi không tự đặt ra con số này — và cũng không giấu nó đi để bán gói rẻ.</p>
+  </div>
+
+  <h2 style="margin-top:48px">Về tiền gọi mô hình</h2>
+  <div class="box">
+    <p style="color:var(--tx2);font-size:15px">Đây là khoản nhiều người bỏ sót. Tiền thuê máy chỉ là một phần — agent còn tốn tiền mỗi lần gọi mô hình ngôn ngữ, và khoản đó trả cho bên khác chứ không trả cho chúng tôi.</p>
+    <p style="color:var(--tx2);font-size:15px;margin-top:12px">Người dùng Việt Nam từng báo cáo tốn <b>100 đến 500 đô một tháng</b> khi dùng mô hình đắt nhất cho mọi việc, và giảm còn <b>20 đến 50 đô</b> sau khi định tuyến lại: việc nhẹ dùng mô hình rẻ, việc nặng mới dùng mô hình mạnh.</p>
+    <div class="warn-box" style="margin-top:16px"><b>Con số trên trang này là ước tính thô</b> để bạn hình dung, không phải báo giá. Chi phí thật phụ thuộc bạn chọn mô hình nào và cấu hình ra sao. Chúng tôi có hướng dẫn giảm khoản này trong blog, và sẵn sàng cấu hình giúp khi bạn thành khách.</div>
+  </div>
+
+  <script>
+  var GOI = ${JSON.stringify(duLieuGoi)};
+  var chon = { viec: null, luot: null, model: null, browser: null };
+  var vnd = function (n) { return n.toLocaleString('vi-VN') + 'đ'; };
+
+  function gan(id, khoa) {
+    var bo = document.getElementById(id);
+    bo.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return; e.preventDefault();
+      [].forEach.call(bo.children, function (x) { x.classList.remove('chon-roi'); });
+      b.classList.add('chon-roi');
+      chon[khoa] = { ram: +b.dataset.ram, api: +b.dataset.api };
+      tinh();
+    });
+  }
+  gan('c-viec', 'viec'); gan('c-luot', 'luot'); gan('c-model', 'model'); gan('c-browser', 'browser');
+
+  function tinh() {
+    if (!chon.viec || !chon.luot || !chon.model || !chon.browser) return;
+    var ram = Math.max(chon.viec.ram, 2) + chon.luot.ram + chon.model.ram + chon.browser.ram;
+    var diem = chon.viec.api + chon.luot.api + chon.model.api;
+
+    var g = GOI.filter(function (x) { return x.ram >= ram; })
+               .sort(function (a, b) { return a.ram - b.ram; })[0] || GOI[GOI.length - 1];
+
+    var apiThap, apiCao;
+    if (diem <= 2) { apiThap = 0; apiCao = 300000; }
+    else if (diem <= 4) { apiThap = 250000; apiCao = 800000; }
+    else if (diem <= 7) { apiThap = 600000; apiCao = 2000000; }
+    else { apiThap = 1500000; apiCao = 5000000; }
+    if (chon.model.ram > 0) { apiThap = 0; apiCao = 200000; }
+
+    document.getElementById('chua').style.display = 'none';
+    document.getElementById('hien').style.display = 'block';
+    document.getElementById('r-ram').textContent = ram + ' GB';
+    document.getElementById('r-goi').textContent = g.ten + ' — ' + g.ram + ' GB';
+    document.getElementById('r-tien').textContent = vnd(g.thang) + '/tháng';
+    document.getElementById('r-api').textContent = apiThap === 0 && apiCao <= 300000
+      ? 'gần như không đáng kể' : vnd(apiThap) + ' – ' + vnd(apiCao);
+    document.getElementById('r-tong').textContent = vnd(g.thang + apiThap) + ' – ' + vnd(g.thang + apiCao);
+
+    var viSao = '<b>Vì sao ra con số này:</b><br>· Việc bạn chọn cần nền tối thiểu ' + Math.max(chon.viec.ram, 2) + ' GB.';
+    if (chon.luot.ram) viSao += '<br>· Lượng việc mỗi ngày cộng thêm ' + chon.luot.ram + ' GB.';
+    if (chon.model.ram) viSao += '<br>· Chạy mô hình ngay trên máy cộng thêm ' + chon.model.ram + ' GB — đây là khoản nặng nhất, bù lại gần như không tốn tiền gọi mô hình bên ngoài.';
+    if (chon.browser.ram) viSao += '<br>· Trình duyệt tự động cộng thêm ' + chon.browser.ram + ' GB.';
+    document.getElementById('r-vi-sao').innerHTML = viSao;
+
+    var cb = '';
+    if (ram > 4 && g.ram < ram) cb = '<div class="warn-box" style="margin-top:16px"><b>Nhu cầu của bạn vượt gói lớn nhất chúng tôi bán sẵn.</b> Để lại liên hệ, chúng tôi báo giá riêng thay vì ép bạn vào gói không đủ.</div>';
+    else if (ram <= 2) cb = '<div class="warn-box" style="margin-top:16px"><b>Nói thật:</b> nhu cầu của bạn nhẹ tới mức máy 2 GB là đủ. Đừng mua gói to hơn cần thiết — lúc nào đông việc hơn thì nâng, chúng tôi tính lại theo ngày còn lại.</div>';
+    else if (chon.model.ram > 0) cb = '<div class="warn-box" style="margin-top:16px"><b>Lưu ý về chạy mô hình tại chỗ:</b> tiết kiệm được tiền gọi mô hình, nhưng mô hình chạy trên máy ảo chậm hơn và kém thông minh hơn dịch vụ ngoài. Nếu chưa từng thử, nên bắt đầu bằng dịch vụ ngoài rồi chuyển sau.</div>';
+    document.getElementById('r-canh-bao').innerHTML = cb;
+  }
+  </script>
+</div></section>`,
+  }));
+}
+
+const urls = ['/', '/blog/', '/ai-van-hanh/', '/dat-mua/', '/chon-goi/', ...bai.map(b => `/blog/${b.slug}/`)];
 fs.writeFileSync(path.join(RA, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map(u => `  <url><loc>${SITE}${u}</loc></url>`).join('\n') + `\n</urlset>\n`);
