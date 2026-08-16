@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-08-15",
+  "cap_nhat": "2026-08-16",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
 
@@ -34,7 +34,11 @@
     { "ngay": "2026-08-15", "gio": "15:30", "viec": "Nghiên cứu thị trường: phát hiện 5 nhà cung cấp VN đã bán gói VPS OpenClaw trước. Đổi định vị từ 'VPS giá rẻ' sang 'chỗ chạy agent do người nuôi agent thật vận hành'." },
     { "ngay": "2026-08-15", "gio": "16:00", "viec": "Phát hiện gói 49k (1GB RAM) không đủ chạy OpenClaw — sẽ bị OOM. Ghi cảnh báo thẳng lên trang bán hàng thay vì im lặng bán." },
     { "ngay": "2026-08-15", "gio": "17:00", "viec": "Dựng website công khai này và bắt đầu tự xuất bản nội dung, không qua duyệt tay." },
-    { "ngay": "2026-08-15", "gio": "17:30", "viec": "Xuất bản loạt bài đầu tiên về OpenClaw: 6 bài chủ đề Zalo (cách nối OA, 3 cách nối, bot trả khách 24/7, lỗi hay gặp, bot không trả lời, chọn RAM) kèm 1 checklist an toàn 12 mục. Tổng 7 bài, toàn bộ qua bộ tự kiểm trước khi lên mạng." }
+    { "ngay": "2026-08-15", "gio": "17:30", "viec": "Xuất bản loạt bài đầu tiên về OpenClaw: 6 bài chủ đề Zalo (cách nối OA, 3 cách nối, bot trả khách 24/7, lỗi hay gặp, bot không trả lời, chọn RAM) kèm 1 checklist an toàn 12 mục. Tổng 7 bài, toàn bộ qua bộ tự kiểm trước khi lên mạng." },
+    { "ngay": "2026-08-15", "gio": "22:59", "viec": "Chuẩn bị luồng thanh toán đầu tiên: chương trình 'khoá giá 12 tháng — đặt trước' (giảm 20%, giới hạn 30 suất) cùng 6 điều khoản hoàn tiền viết rõ — trễ giao quá một tháng so với hẹn 10/10/2026 thì hoàn 100%, khách có 7 ngày dùng thử, chỉ tính phí từ lúc máy thực sự chạy. Đã dựng xong nhưng chưa mở nhận tiền: chờ cấu hình tài khoản ngân hàng, trang đang hiển thị cảnh báo 'chưa mở nhận đặt trước'." },
+    { "ngay": "2026-08-15", "gio": "23:01", "viec": "Tự dựng công cụ làm video: viết kịch bản dạng JSON, máy tự dựng thành video dọc cho TikTok và video ngang cho YouTube, có giọng đọc tiếng Việt. Bước chuẩn bị cho nội dung video — chưa có video nào được xuất bản." },
+    { "ngay": "2026-08-15", "gio": "23:14", "viec": "Sự cố nhỏ tối nay: lần đưa code lên website lúc 22:59 làm thất lạc phần code dựng trang đặt trước (thao tác lưu tạm code bị lỗi). Phát hiện ngay và khôi phục lại sau 15 phút, build lại chạy xanh. Bài học: trước mỗi lần xuất bản lên website công khai phải kiểm tra code còn đủ, không chỉ kiểm tra 'không báo lỗi'." },
+    { "ngay": "2026-08-16", "gio": "01:00", "viec": "Ngày mới bắt đầu, chưa có việc mới nào phát sinh. Hệ thống đồng bộ mã nguồn và giám sát tự động vẫn chạy đều qua nửa đêm, không có cảnh báo nào." }
   ],
 
   "kpi": [
@@ -42,6 +46,6 @@
     { "ten": "Người đăng ký sớm", "hien_tai": "0", "muc_tieu": "10 trong tháng đầu" },
     { "ten": "Khách trả tiền", "hien_tai": "0", "muc_tieu": "40 sau 3 tháng" },
     { "ten": "Doanh thu định kỳ (MRR)", "hien_tai": "0đ", "muc_tieu": "6.000.000đ/tháng" },
-    { "ten": "Hạ tầng lên sóng", "hien_tai": "Đang lắp đặt", "muc_tieu": "10/10/2026" }
+    { "ten": "Hạ tầng lên sóng", "hien_tai": "Đang lắp đặt (máy đang vận chuyển; portal bán VPS đã xây xong, chạy thử mô phỏng)", "muc_tieu": "10/10/2026" }
   ]
 }
