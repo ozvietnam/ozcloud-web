@@ -1,1 +1,18 @@
-{ "buildCommand": "node build.mjs", "outputDirectory": "public", "framework": null, "cleanUrls": true }
+{
+  "buildCommand": "node build.mjs",
+  "outputDirectory": "public",
+  "framework": null,
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/blog/zalo-01-noi-openclaw-vao-zalo-oa",
+      "destination": "/blog/zalo-01-noi-openclaw-vao-zalo-bot/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/zalo-01-noi-openclaw-vao-zalo-oa/",
+      "destination": "/blog/zalo-01-noi-openclaw-vao-zalo-bot/",
+      "permanent": true
+    }
+  ]
+}
