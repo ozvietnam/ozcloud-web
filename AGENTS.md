@@ -38,3 +38,16 @@ Mục nào không qua được thì SỬA rồi mới push. Không push bừa.
 - **Chi tiền thật** dưới mọi hình thức (mua domain, chạy quảng cáo, đăng ký dịch vụ trả phí). Luôn cần anh Thắng.
 - Xoá bài đã đăng mà không ghi lý do vào `du-lieu/van-hanh.json`.
 - Sửa `AGENTS.md` này để nới lỏng ràng buộc cho chính mình.
+
+## Mục 9 — đối chiếu cẩm nang (bổ sung 16/08/2026, BẮT BUỘC)
+
+Trước khi đăng bất cứ thứ gì, mở `tai-lieu/CAM-NANG-AGENT.md` và đối chiếu.
+
+- Con số kỹ thuật (RAM, giới hạn kênh, giá, giấy phép) phải **khớp cẩm nang**. Lệch thì sửa bài, không sửa cẩm nang.
+- Khẳng định "phần mềm X hỗ trợ Y" mà cẩm nang không có thì **không được viết ra**. Chưa tra được không phải là được phép đoán.
+- **Không bài nào được nói OpenClaw nối vào Zalo OA.** OpenClaw nối qua Zalo Bot Creator (`bot.zaloplatforms.com`). Xem mục 9 cẩm nang.
+- Không hứa bot Zalo xử lý được ảnh, voice, video, file khách gửi — kiểm thử thật cho thấy không chạy.
+- Không gợi ý khách bán lại n8n như dịch vụ, hay chạy Dify đa khách — vi phạm giấy phép. Xem mục 6 cẩm nang.
+- Nội dung do agent viết phải ghi rõ là do AI tạo (luật Trí tuệ nhân tạo, hiệu lực 01/03/2026). Xem mục 7 cẩm nang.
+
+Vì sao có mục này: ngày 15/08/2026 ta đăng 3 bài dạy nối OpenClaw vào Zalo OA. Tài liệu chính thức ghi rõ là không hỗ trợ. Phải viết lại cả 3 bài. Nguyên nhân là viết theo suy đoán hợp lý thay vì đọc nguồn gốc.
