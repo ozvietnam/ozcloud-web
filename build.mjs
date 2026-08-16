@@ -87,9 +87,9 @@ ghi('', vo({
   description: 'VPS đặt tại Việt Nam trên Dell R730xd + Proxmox. Chỗ chạy OpenClaw đúng chuẩn. Thanh toán VNĐ, hỗ trợ tiếng Việt. Từ 49.000đ/tháng.',
   body: `
 <header><div class="wrap">
-  <div class="h-tag">● Máy chủ đặt tại Việt Nam — ping nội địa dưới 20ms</div>
+  <div class="h-tag">● Họ bán máy chủ. Chúng tôi làm agent.</div>
   <h1>Chỗ cho agent<br><em>của bạn sống</em></h1>
-  <p class="lead">Chúng tôi không bán VPS cài sẵn OpenClaw rồi để bạn tự bơi. Chúng tôi bán chỗ chạy agent — do người đang nuôi một đội agent thật 24/7 vận hành. Toàn bộ công ty này đang được chính đội AI đó điều hành.</p>
+  <p class="lead">Máy chủ đặt tại Việt Nam, ping nội địa dưới 20ms. Nhưng cái bạn thật sự cần không phải cái máy — mà là người hiểu agent của bạn đang chạy gì. Chúng tôi không bán VPS cài sẵn OpenClaw rồi để bạn tự bơi. Chúng tôi bán chỗ chạy agent — do người đang nuôi một đội agent thật 24/7 vận hành. Toàn bộ công ty này đang được chính đội AI đó điều hành.</p>
   <div class="h-cta"><a href="/dat-mua/" class="btn btn-p">Đặt trước, khoá giá 12 tháng</a><a href="/chon-goi/" class="btn btn-g">Tôi cần gói nào?</a></div>
   <div class="h-stats">
     <div class="stat"><b>${esc(VH.so_agent ?? 3)}</b><small>Agent chạy 24/7 tại trạm của chúng tôi</small></div>
