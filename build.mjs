@@ -90,7 +90,7 @@ ghi('', vo({
   <div class="h-tag">● Họ bán máy chủ. Chúng tôi làm agent.</div>
   <h1>Chỗ cho agent<br><em>của bạn sống</em></h1>
   <p class="lead">Máy chủ đặt tại Việt Nam, ping nội địa dưới 20ms. Nhưng cái bạn thật sự cần không phải cái máy — mà là người hiểu agent của bạn đang chạy gì. Chúng tôi không bán VPS cài sẵn OpenClaw rồi để bạn tự bơi. Chúng tôi bán chỗ chạy agent — do người đang nuôi một đội agent thật 24/7 vận hành. Toàn bộ công ty này đang được chính đội AI đó điều hành.</p>
-  <div class="h-cta"><a href="/dat-mua/" class="btn btn-p">Đặt trước, khoá giá 12 tháng</a><a href="/chon-goi/" class="btn btn-g">Tôi cần gói nào?</a></div>
+  <div class="h-cta"><a href="/dat-mua/" class="btn btn-p">Đặt trước, khoá giá 12 tháng</a><a href="/phuong-an/" class="btn btn-g">Việc của tôi làm thế nào?</a></div>
   <div class="h-stats">
     <div class="stat"><b>${esc(VH.so_agent ?? 3)}</b><small>Agent chạy 24/7 tại trạm của chúng tôi</small></div>
     <div class="stat"><b>${esc(bai.length)}</b><small>Bài viết do agent tự sản xuất</small></div>
@@ -498,7 +498,78 @@ const TT = JSON.parse(fs.readFileSync(path.join(GOC, 'du-lieu', 'thanh-toan.json
   }));
 }
 
-const urls = ['/', '/blog/', '/ai-van-hanh/', '/dat-mua/', '/chon-goi/', ...bai.map(b => `/blog/${b.slug}/`)];
+// ---------- trang phuong an trien khai ----------
+const PA = JSON.parse(fs.readFileSync(path.join(GOC, 'du-lieu', 'phuong-an.json'), 'utf8'));
+{
+  const the = (p) => `
+  <article class="pa" id="pa-${esc(p.ma)}">
+    <div class="pa-dau">
+      <div>
+        <div class="pa-nghe">${esc(p.nghe)}</div>
+        <h3>${esc(p.ten)}</h3>
+        <p class="pa-dau-noi">“${esc(p.noi_dau)}”</p>
+      </div>
+      <div class="pa-kho" title="Độ khó triển khai">${'●'.repeat(p.do_kho)}${'○'.repeat(3 - p.do_kho)}<span>${p.do_kho === 1 ? 'dễ' : p.do_kho === 2 ? 'vừa' : 'khó'}</span></div>
+    </div>
+
+    <div class="pa-luoi">
+      <div class="pa-o"><span class="pa-nhan">1 · Máy nào</span>
+        <b>${esc(p.vps.goi)} — ${esc(p.vps.ram)}</b>
+        <p>${esc(p.vps.vi_sao)}</p></div>
+
+      <div class="pa-o"><span class="pa-nhan">2 · Agent nào</span>
+        <b>${esc(p.agent.chinh)}</b>
+        <p>${esc(p.agent.vi_sao)}${p.agent.them ? ' — ' + esc(p.agent.them) : ''}</p></div>
+
+      <div class="pa-o"><span class="pa-nhan">3 · Mô hình nào</span>
+        <b>${esc(p.mo_hinh.chinh)}</b>
+        <p>Dự phòng: ${esc(p.mo_hinh.du_phong)}. ${esc(p.mo_hinh.vi_sao)}${p.mo_hinh.luu_y ? ' <i>' + esc(p.mo_hinh.luu_y) + '</i>' : ''}</p></div>
+
+      <div class="pa-o"><span class="pa-nhan">4 · Nối vào đâu</span>
+        <b>${p.ket_noi.map(esc).join(' · ')}</b>
+        <p>Đây là chỗ quyết định agent có tới được khách hay không.</p></div>
+
+      <div class="pa-o pa-rong"><span class="pa-nhan">5 · Giao việc ra sao</span>
+        <b>${esc(p.giao_viec.kieu)}</b>
+        <p>${esc(p.giao_viec.cach)}</p></div>
+    </div>
+
+    <div class="pa-chan">
+      <div><span>Dựng xong trong</span><b>${esc(p.thoi_gian_dung)}</b></div>
+      <div><span>Tiền máy</span><b>${esc(p.chi_phi.may)}</b></div>
+      <div><span>Tiền gọi mô hình</span><b>${esc(p.chi_phi.mo_hinh)}</b></div>
+    </div>
+
+    <div class="pa-canh-bao"><b>Chúng tôi nói trước:</b> ${esc(p.canh_bao)}</div>
+  </article>`;
+
+  ghi('phuong-an', vo({
+    title: 'Phương án triển khai agent theo từng nghề | OZ Cloud',
+    description: 'Bạn nói công việc, chúng tôi trả lời đủ 5 câu: máy nào, agent nào, mô hình nào, nối vào đâu, giao việc ra sao. Sáu phương án cho sáu nghề, kèm chi phí và cảnh báo.',
+    canonical: '/phuong-an/',
+    body: `<section><div class="wrap">
+  <div class="s-head"><h1 style="font-size:36px">Bạn nói công việc — chúng tôi đưa bản thiết kế</h1>
+  <p>Mua máy chủ xong rồi ngồi nhìn nó là chuyện rất thường. Cái khó không phải cái máy, mà là năm câu hỏi phía sau: <b>máy nào · agent nào · mô hình nào · nối vào đâu · giao việc ra sao</b>. Dưới đây là câu trả lời sẵn cho sáu nghề — kèm cả chỗ dễ hỏng, để bạn biết trước khi trả tiền.</p></div>
+
+  <div class="box" style="margin-bottom:26px">
+    ${(PA.luu_y_chung || []).map(x => `<p style="font-size:14.5px;color:var(--tx2);margin-bottom:9px">· ${esc(x)}</p>`).join('')}
+  </div>
+
+  ${(PA.phuong_an || []).map(the).join('')}
+
+  <div class="cta-inline" style="margin-top:40px">
+    <b>Việc của bạn không nằm trong sáu phương án trên?</b>
+    <p>Kể cho chúng tôi nghe bạn đang mất thời gian vào việc gì mỗi ngày. Chúng tôi trả lời đủ năm câu cho đúng việc của bạn — miễn phí, kể cả khi kết luận là bạn chưa cần thuê máy.</p>
+    <a href="/#dang-ky" class="btn btn-p">Kể việc của bạn</a>
+    <a href="/chon-goi/" class="btn btn-g" style="margin-left:8px">Hoặc tự tính cấu hình</a>
+  </div>
+
+  <p class="src" style="margin-top:22px">Sáu phương án này là cách chúng tôi làm thật, không phải bài giới thiệu. Chính công ty này đang chạy bằng hàng đợi việc và bản giao việc như mô tả ở phương án số 6 — bạn xem nhật ký ở <a href="/ai-van-hanh/" style="color:var(--acc)">trang AI vận hành</a>.</p>
+</div></section>`,
+  }));
+}
+
+const urls = ['/', '/blog/', '/ai-van-hanh/', '/dat-mua/', '/chon-goi/', '/phuong-an/', ...bai.map(b => `/blog/${b.slug}/`)];
 fs.writeFileSync(path.join(RA, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map(u => `  <url><loc>${SITE}${u}</loc></url>`).join('\n') + `\n</urlset>\n`);

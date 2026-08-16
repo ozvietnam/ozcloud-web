@@ -1,0 +1,103 @@
+{
+  "_huong_dan": "Thư viện phương án triển khai theo nghề. Mỗi mục trả lời đủ 5 câu: VPS nào, agent nào, mô hình nào, nối kênh gì, giao việc ra sao. Mọi con số phải truy được nguồn — không bịa giá mô hình.",
+  "cap_nhat": "2026-08-16",
+
+  "luu_y_chung": [
+    "Tiền thuê máy trả cho chúng tôi. Tiền gọi mô hình trả cho bên cung cấp mô hình — hai khoản khác nhau, chúng tôi nói rõ để bạn không bị bất ngờ.",
+    "Con số chi phí mô hình là ước tính thô theo mức dùng, không phải báo giá. Chi phí thật phụ thuộc bạn chọn mô hình nào và cấu hình định tuyến ra sao.",
+    "Mọi phương án dưới đây chúng tôi đều dựng được trong buổi đầu tiên. Phần khó không phải cài đặt — phần khó là viết bản giao việc cho đúng, và đó là chỗ chúng tôi đi cùng bạn."
+  ],
+
+  "phuong_an": [
+    {
+      "ma": "zalo-ngoai-gio",
+      "nghe": "Chủ shop, bán hàng online",
+      "ten": "Trả khách Zalo ngoài giờ",
+      "noi_dau": "Khách nhắn 11 giờ đêm. Sáng mai mở máy thì họ đã mua chỗ khác.",
+      "vps": { "goi": "Pro", "ram": "4 GB", "vi_sao": "Một agent trực kênh chạy liên tục. 2 GB chạy được nhưng hay nghẽn khi khách nhắn dồn; 4 GB là mức tài liệu chính thức gọi là thoải mái." },
+      "agent": { "chinh": "OpenClaw", "vi_sao": "Có sẵn kết nối Zalo với 3 biến thể, không phải tự viết cầu nối." },
+      "mo_hinh": { "chinh": "Mô hình rẻ cho hội thoại thường ngày", "du_phong": "Mô hình mạnh khi khách hỏi khó", "vi_sao": "Trả lời giá và tình trạng hàng không cần mô hình đắt. Định tuyến đúng là chỗ tiết kiệm nhiều nhất.", "luu_y": "Chúng tôi đang chạy DeepSeek làm chính và một mô hình dự phòng trên chính trạm của mình — cấu hình này đã kiểm chứng thật." },
+      "ket_noi": ["Zalo OA", "hoặc Zalo cá nhân qua đăng nhập mã QR"],
+      "giao_viec": { "kieu": "Hội thoại + bảng thông tin", "cach": "Bạn viết một bản giao việc gồm: bảng giá, chính sách đổi trả, giờ giao hàng, và câu nào thì chuyển cho người thật. Agent đọc bản đó trước mỗi lần trả lời." },
+      "thoi_gian_dung": "Nửa buổi",
+      "chi_phi": { "may": "169.000đ/tháng", "mo_hinh": "khoảng 250.000 – 800.000đ/tháng tuỳ lượng khách" },
+      "canh_bao": "Đừng để agent tự nối lại liên tục khi mất kết nối — có ca ghi nhận trên nền tảng khác bị hạn chế tài khoản vì hơn 3.500 chu kỳ kết nối trong 3 giờ. Chúng tôi cấu hình chặn sẵn việc này.",
+      "do_kho": 1
+    },
+    {
+      "ma": "tom-tat-sang",
+      "nghe": "Quản lý, trưởng phòng",
+      "ten": "Bản tin sáng: thư, lịch, việc tồn",
+      "noi_dau": "Mỗi sáng mất 40 phút đọc thư và dò lịch mới biết hôm nay phải làm gì.",
+      "vps": { "goi": "Cơ bản", "ram": "2 GB", "vi_sao": "Chạy vài lần trong ngày theo lịch, không trực liên tục. Đây là một trong ít trường hợp 2 GB thật sự đủ." },
+      "agent": { "chinh": "OpenClaw", "vi_sao": "Đọc hộp thư, đọc lịch, viết tóm tắt — không cần thêm công cụ nào khác." },
+      "mo_hinh": { "chinh": "Mô hình tầm trung", "du_phong": "Không bắt buộc", "vi_sao": "Tóm tắt là việc mô hình nào cũng làm được. Đừng trả tiền cho mô hình đắt nhất để tóm tắt thư." },
+      "ket_noi": ["Hộp thư công việc", "Lịch", "Nhận bản tin qua Telegram hoặc thư"],
+      "giao_viec": { "kieu": "Hẹn giờ", "cach": "Một lịch chạy 7 giờ sáng. Bản giao việc nêu rõ: quan tâm thư từ ai, bỏ qua loại nào, tóm tắt dài bao nhiêu, và ba việc nên làm hôm nay." },
+      "thoi_gian_dung": "2 tiếng",
+      "chi_phi": { "may": "89.000đ/tháng", "mo_hinh": "dưới 300.000đ/tháng" },
+      "canh_bao": "Cấp cho agent một hộp thư riêng hoặc quyền hạn chế, đừng cấp toàn quyền hộp thư chính.",
+      "do_kho": 1
+    },
+    {
+      "ma": "doc-file-bao-so",
+      "nghe": "Kế toán, quản lý kho",
+      "ten": "Đọc file, chốt số, gửi báo cáo",
+      "noi_dau": "Cuối ngày mở bốn file Excel, cộng tay, gõ lại vào báo cáo. Sai một ô là làm lại từ đầu.",
+      "vps": { "goi": "Pro", "ram": "4 GB", "vi_sao": "Xử lý bảng tính tốn bộ nhớ theo kích thước file. 4 GB chịu được file vài chục nghìn dòng." },
+      "agent": { "chinh": "OpenClaw", "them": "Có thể thêm một agent chuyên trách nếu chạy nhiều lần trong ngày", "vi_sao": "Đọc và tính trên file là việc agent làm tốt, miễn là bạn nói rõ quy tắc tính." },
+      "mo_hinh": { "chinh": "Mô hình tầm trung", "du_phong": "Mô hình mạnh cho tháng có nghiệp vụ lạ", "vi_sao": "Phép tính do máy làm, mô hình chỉ đọc hiểu yêu cầu và trình bày. Không cần mô hình đắt." },
+      "ket_noi": ["Thư mục file trên máy", "Gửi kết quả qua thư hoặc Telegram"],
+      "giao_viec": { "kieu": "Hẹn giờ + hàng đợi việc", "cach": "Bản giao việc nêu rõ công thức tính, cột nào là cột nào, ngưỡng nào thì phải cảnh báo. Quan trọng nhất: bắt agent ghi lại phép tính để bạn kiểm được, không chỉ đưa kết quả." },
+      "thoi_gian_dung": "1 buổi",
+      "chi_phi": { "may": "169.000đ/tháng", "mo_hinh": "khoảng 250.000 – 800.000đ/tháng" },
+      "canh_bao": "Số tiền thì tuyệt đối không để mô hình tự tính nhẩm. Bắt nó viết công thức rồi máy chạy công thức — đây là quy tắc chúng tôi áp cho chính mình.",
+      "do_kho": 2
+    },
+    {
+      "ma": "truc-nhieu-kenh",
+      "nghe": "Chăm sóc khách hàng",
+      "ten": "Trực nhiều kênh cùng lúc",
+      "noi_dau": "Khách nhắn Zalo, nhắn fanpage, gửi thư — ba nơi, một người, sót là mất khách.",
+      "vps": { "goi": "Dev", "ram": "8 GB", "vi_sao": "Mỗi kênh là một kết nối giữ liên tục. Ba kênh trở lên thì 4 GB bắt đầu chật." },
+      "agent": { "chinh": "OpenClaw", "them": "Thêm một agent kiểm soát chất lượng đọc lại câu trả lời", "vi_sao": "Nhiều kênh thì rủi ro trả lời sai cũng nhân lên — nên có agent thứ hai soát." },
+      "mo_hinh": { "chinh": "Mô hình tầm trung cho câu thường", "du_phong": "Mô hình mạnh cho khiếu nại", "vi_sao": "Khách đang bực mà gặp câu trả lời máy móc thì hỏng việc. Định tuyến theo cảm xúc của tin nhắn." },
+      "ket_noi": ["Zalo", "Facebook", "Hộp thư", "Telegram nội bộ để báo người thật"],
+      "giao_viec": { "kieu": "Hội thoại + luật chuyển người", "cach": "Bản giao việc phải nêu rõ ranh giới: câu nào agent tự trả, câu nào chuyển người ngay. Khiếu nại, hoàn tiền, khiếu kiện — chuyển người, không bàn cãi." },
+      "thoi_gian_dung": "1 ngày",
+      "chi_phi": { "may": "299.000đ/tháng", "mo_hinh": "khoảng 600.000 – 2.000.000đ/tháng" },
+      "canh_bao": "Đây là phương án dễ hỏng danh tiếng nhất. Chúng tôi khuyên chạy chế độ nháp một tuần — agent soạn, người bấm gửi — rồi mới thả tự động.",
+      "do_kho": 3
+    },
+    {
+      "ma": "theo-doi-doi-thu",
+      "nghe": "Marketing, chủ doanh nghiệp",
+      "ten": "Theo dõi đối thủ và tin ngành",
+      "noi_dau": "Đối thủ đổi giá, ra sản phẩm mới, mình biết sau hai tuần.",
+      "vps": { "goi": "Pro", "ram": "4 GB", "vi_sao": "Cần trình duyệt tự động để đọc trang web — riêng khoản này đã ngốn thêm bộ nhớ." },
+      "agent": { "chinh": "OpenClaw có bật công cụ trình duyệt", "vi_sao": "Đọc trang, so sánh với lần trước, chỉ báo khi có thay đổi." },
+      "mo_hinh": { "chinh": "Mô hình tầm trung", "du_phong": "Không bắt buộc", "vi_sao": "Việc chính là so sánh và tóm tắt, không phải suy luận sâu." },
+      "ket_noi": ["Trang web đối thủ", "Nhận bản tin qua Telegram hoặc thư"],
+      "giao_viec": { "kieu": "Hẹn giờ định kỳ", "cach": "Bản giao việc liệt kê rõ theo dõi bên nào, trang nào, quan tâm mục gì. Bắt agent chỉ báo khi CÓ thay đổi — không thì ngày nào cũng nhận bản tin rồi bỏ qua." },
+      "thoi_gian_dung": "2 tiếng",
+      "chi_phi": { "may": "169.000đ/tháng", "mo_hinh": "dưới 300.000đ/tháng" },
+      "canh_bao": "Đọc trang web người khác thì tôn trọng giới hạn kỹ thuật của họ. Chúng tôi cấu hình nhịp đọc thưa, không quét dồn dập.",
+      "do_kho": 2
+    },
+    {
+      "ma": "tu-chu-du-lieu",
+      "nghe": "Doanh nghiệp có dữ liệu nhạy cảm",
+      "ten": "Chạy mô hình ngay trên máy mình",
+      "noi_dau": "Dữ liệu khách hàng không được gửi ra ngoài, nhưng vẫn muốn dùng agent.",
+      "vps": { "goi": "AI Agent", "ram": "16 GB", "vi_sao": "Mô hình chạy tại chỗ nằm hết trong bộ nhớ. Đây là khoản nặng nhất trong mọi phương án." },
+      "agent": { "chinh": "OpenClaw nối mô hình chạy tại chỗ", "vi_sao": "OpenClaw hỗ trợ sẵn các bộ chạy mô hình nội bộ, không cần khoá dịch vụ ngoài." },
+      "mo_hinh": { "chinh": "Mô hình mở chạy tại chỗ", "du_phong": "Không dùng dịch vụ ngoài", "vi_sao": "Dữ liệu không rời khỏi máy của bạn.", "luu_y": "Đổi lại: mô hình chạy trên máy ảo chậm hơn và kém thông minh hơn dịch vụ ngoài. Chúng tôi nói trước để bạn không kỳ vọng sai." },
+      "ket_noi": ["Nội bộ", "Telegram riêng của công ty"],
+      "giao_viec": { "kieu": "Hàng đợi việc nội bộ", "cach": "Việc thả vào một thư mục, agent nhặt lên làm, xong đẩy sang thư mục kết quả. Cách này dễ kiểm và dễ truy vết — chính là cách chúng tôi vận hành nội bộ." },
+      "thoi_gian_dung": "2 ngày",
+      "chi_phi": { "may": "549.000đ/tháng", "mo_hinh": "gần như không đáng kể" },
+      "canh_bao": "Nếu chưa từng chạy agent bao giờ, đừng bắt đầu bằng phương án này. Chạy dịch vụ ngoài một tháng cho quen rồi hãy chuyển vào trong.",
+      "do_kho": 3
+    }
+  ]
+}
