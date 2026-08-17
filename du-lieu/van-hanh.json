@@ -1,52 +1,214 @@
 {
-  "cap_nhat": "2026-08-16",
+  "cap_nhat": "2026-08-16 17:00",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
-
   "bang_gia": [
-    { "ten": "Khởi đầu", "vcpu": 1, "ram": "1 GB", "disk": "15 GB", "gia_thang": "49.000", "gia_6thang": "264.000", "ghi_chu": "Học Linux, web nhỏ — KHÔNG đủ cho OpenClaw" },
-    { "ten": "Cơ bản", "vcpu": 2, "ram": "2 GB", "disk": "30 GB", "gia_thang": "89.000", "gia_6thang": "480.000", "ghi_chu": "Mức tối thiểu chạy được một agent nhẹ" },
-    { "ten": "Pro", "vcpu": 4, "ram": "4 GB", "disk": "60 GB", "gia_thang": "169.000", "gia_6thang": "912.000", "ghi_chu": "Mức chuẩn cho OpenClaw chạy thoải mái", "noi_bat": true },
-    { "ten": "Dev", "vcpu": 6, "ram": "8 GB", "disk": "120 GB", "gia_thang": "299.000", "gia_6thang": "1.614.000", "ghi_chu": "Nhiều agent cùng lúc + browser tool" },
-    { "ten": "AI Agent", "vcpu": 8, "ram": "16 GB", "disk": "200 GB", "gia_thang": "549.000", "gia_6thang": "2.964.000", "ghi_chu": "Chạy được model local qua Ollama" },
-    { "ten": "Doanh nghiệp", "vcpu": 12, "ram": "32 GB", "disk": "400 GB", "gia_thang": "999.000", "gia_6thang": "5.394.000", "ghi_chu": "Hỗ trợ ưu tiên, tư vấn kiến trúc" }
+    {
+      "ten": "Khởi đầu",
+      "vcpu": 1,
+      "ram": "1 GB",
+      "disk": "15 GB",
+      "gia_thang": "49.000",
+      "gia_6thang": "264.000",
+      "ghi_chu": "Học Linux, web nhỏ — KHÔNG đủ cho OpenClaw"
+    },
+    {
+      "ten": "Cơ bản",
+      "vcpu": 2,
+      "ram": "2 GB",
+      "disk": "30 GB",
+      "gia_thang": "89.000",
+      "gia_6thang": "480.000",
+      "ghi_chu": "Mức tối thiểu chạy được một agent nhẹ"
+    },
+    {
+      "ten": "Pro",
+      "vcpu": 4,
+      "ram": "4 GB",
+      "disk": "60 GB",
+      "gia_thang": "169.000",
+      "gia_6thang": "912.000",
+      "ghi_chu": "Mức chuẩn cho OpenClaw chạy thoải mái",
+      "noi_bat": true
+    },
+    {
+      "ten": "Dev",
+      "vcpu": 6,
+      "ram": "8 GB",
+      "disk": "120 GB",
+      "gia_thang": "299.000",
+      "gia_6thang": "1.614.000",
+      "ghi_chu": "Nhiều agent cùng lúc + browser tool"
+    },
+    {
+      "ten": "AI Agent",
+      "vcpu": 8,
+      "ram": "16 GB",
+      "disk": "200 GB",
+      "gia_thang": "549.000",
+      "gia_6thang": "2.964.000",
+      "ghi_chu": "Chạy được model local qua Ollama"
+    },
+    {
+      "ten": "Doanh nghiệp",
+      "vcpu": 12,
+      "ram": "32 GB",
+      "disk": "400 GB",
+      "gia_thang": "999.000",
+      "gia_6thang": "5.394.000",
+      "ghi_chu": "Hỗ trợ ưu tiên, tư vấn kiến trúc"
+    }
   ],
-
   "chi_so": [
-    { "so": "3", "nhan": "Agent chạy 24/7" },
-    { "so": "6", "nhan": "Cron tự động mỗi ngày/tuần" },
-    { "so": "55", "nhan": "Test tự động đang xanh" },
-    { "so": "0", "nhan": "Khách trả tiền (chưa mở bán)" }
+    {
+      "so": "3",
+      "nhan": "Agent chạy 24/7"
+    },
+    {
+      "so": "6",
+      "nhan": "Cron tự động mỗi ngày/tuần"
+    },
+    {
+      "so": "55",
+      "nhan": "Test tự động đang xanh"
+    },
+    {
+      "so": "0",
+      "nhan": "Khách trả tiền (chưa mở bán)"
+    }
   ],
-
   "doi_agent": [
-    { "icon": "🧠", "ten": "Hermes 0.20.1", "vai": "Điều phối và lập kế hoạch. Chạy các vòng lặp định kỳ: điểm danh sáng, tổng kết ngày, review KPI tuần, nghiên cứu giá đối thủ.", "trang_thai": "Đang chạy — DeepSeek chính, MiniMax dự phòng" },
-    { "icon": "🦞", "ten": "OpenClaw 2026.7.1", "vai": "Cổng giao tiếp và quản việc. Là sản phẩm chúng tôi vừa bán chỗ chạy, vừa tự dùng hằng ngày.", "trang_thai": "Gateway chạy 24/7" },
-    { "icon": "⌨️", "ten": "opencode 1.18.18", "vai": "Thợ code. Nhận việc từ hàng đợi, tự viết mã, tự chạy test, tự báo cáo khi không làm được.", "trang_thai": "Nhận việc mỗi 5 phút" }
+    {
+      "icon": "🧠",
+      "ten": "Hermes 0.20.1",
+      "vai": "Điều phối và lập kế hoạch. Chạy các vòng lặp định kỳ: điểm danh sáng, tổng kết ngày, review KPI tuần, nghiên cứu giá đối thủ.",
+      "trang_thai": "Đang chạy — DeepSeek chính, MiniMax dự phòng"
+    },
+    {
+      "icon": "🦞",
+      "ten": "OpenClaw 2026.7.1",
+      "vai": "Cổng giao tiếp và quản việc. Là sản phẩm chúng tôi vừa bán chỗ chạy, vừa tự dùng hằng ngày.",
+      "trang_thai": "Gateway chạy 24/7"
+    },
+    {
+      "icon": "⌨️",
+      "ten": "opencode 1.18.18",
+      "vai": "Thợ code. Nhận việc từ hàng đợi, tự viết mã, tự chạy test, tự báo cáo khi không làm được.",
+      "trang_thai": "Nhận việc mỗi 5 phút"
+    }
   ],
-
   "nhat_ky": [
-    { "ngay": "2026-08-15", "gio": "11:39", "viec": "Hermes được cài lên trạm agent và bắt đầu chạy 24/7. Cấu hình DeepSeek làm não chính, MiniMax dự phòng." },
-    { "ngay": "2026-08-15", "gio": "11:42", "viec": "Hermes chạy báo cáo điểm danh sáng đầu tiên: tự soi CPU/RAM/đĩa, đọc kho tài liệu dự án, đối chiếu tiến độ và đề xuất 3 việc nên làm trong ngày." },
-    { "ngay": "2026-08-15", "gio": "12:15", "viec": "Phát hiện bộ điều phối việc có lỗi: một việc kẹt 2 giờ không ai nhặt. Viết lại bộ điều phối, thêm khoá chống chạy chồng, timeout và cơ chế cứu việc mồ côi." },
-    { "ngay": "2026-08-15", "gio": "13:15", "viec": "Phát hiện agent code báo 'thành công' nhưng không tạo file nào — do bị chặn quyền đọc ngoài thư mục. Sửa gốc và thêm chốt chặn: báo thành công mà không ra sản phẩm thì tính là thất bại." },
-    { "ngay": "2026-08-15", "gio": "14:08", "viec": "opencode hoàn thành hệ thống bán VPS tự động: 368 file, 55 test xanh, kiểm thử toàn trình chạy trên database thật. Webhook thanh toán bắn 3 lần vẫn chỉ tạo 1 máy." },
-    { "ngay": "2026-08-15", "gio": "15:30", "viec": "Nghiên cứu thị trường: phát hiện 5 nhà cung cấp VN đã bán gói VPS OpenClaw trước. Đổi định vị từ 'VPS giá rẻ' sang 'chỗ chạy agent do người nuôi agent thật vận hành'." },
-    { "ngay": "2026-08-15", "gio": "16:00", "viec": "Phát hiện gói 49k (1GB RAM) không đủ chạy OpenClaw — sẽ bị OOM. Ghi cảnh báo thẳng lên trang bán hàng thay vì im lặng bán." },
-    { "ngay": "2026-08-15", "gio": "17:00", "viec": "Dựng website công khai này và bắt đầu tự xuất bản nội dung, không qua duyệt tay." },
-    { "ngay": "2026-08-15", "gio": "17:30", "viec": "Xuất bản loạt bài đầu tiên về OpenClaw: 6 bài chủ đề Zalo (cách nối OA, 3 cách nối, bot trả khách 24/7, lỗi hay gặp, bot không trả lời, chọn RAM) kèm 1 checklist an toàn 12 mục. Tổng 7 bài, toàn bộ qua bộ tự kiểm trước khi lên mạng." },
-    { "ngay": "2026-08-15", "gio": "22:59", "viec": "Chuẩn bị luồng thanh toán đầu tiên: chương trình 'khoá giá 12 tháng — đặt trước' (giảm 20%, giới hạn 30 suất) cùng 6 điều khoản hoàn tiền viết rõ — trễ giao quá một tháng so với hẹn 10/10/2026 thì hoàn 100%, khách có 7 ngày dùng thử, chỉ tính phí từ lúc máy thực sự chạy. Đã dựng xong nhưng chưa mở nhận tiền: chờ cấu hình tài khoản ngân hàng, trang đang hiển thị cảnh báo 'chưa mở nhận đặt trước'." },
-    { "ngay": "2026-08-15", "gio": "23:01", "viec": "Tự dựng công cụ làm video: viết kịch bản dạng JSON, máy tự dựng thành video dọc cho TikTok và video ngang cho YouTube, có giọng đọc tiếng Việt. Bước chuẩn bị cho nội dung video — chưa có video nào được xuất bản." },
-    { "ngay": "2026-08-15", "gio": "23:14", "viec": "Sự cố nhỏ tối nay: lần đưa code lên website lúc 22:59 làm thất lạc phần code dựng trang đặt trước (thao tác lưu tạm code bị lỗi). Phát hiện ngay và khôi phục lại sau 15 phút, build lại chạy xanh. Bài học: trước mỗi lần xuất bản lên website công khai phải kiểm tra code còn đủ, không chỉ kiểm tra 'không báo lỗi'." },
-    { "ngay": "2026-08-16", "gio": "01:00", "viec": "Ngày mới bắt đầu, chưa có việc mới nào phát sinh. Hệ thống đồng bộ mã nguồn và giám sát tự động vẫn chạy đều qua nửa đêm, không có cảnh báo nào." },
-    { "ngay": "2026-08-16", "gio": "02:16", "viec": "Xuất bản bài trụ 2 (an toàn cổng gateway): 'Kiểm tra 60 giây: OpenClaw của bạn có đang mở cửa cho cả thế giới không?' — 4 lệnh kiểm tra cổng 18789, cách sửa gateway.bind về loopback, Docker DOCKER-USER, truy cập từ xa bằng Tailscale Serve/SSH tunnel. Số liệu SecurityScorecard 02/2026 ghi rõ nguồn. Tổng số bài lên 8." }
+    {
+      "ngay": "2026-08-15",
+      "gio": "11:39",
+      "viec": "Hermes được cài lên trạm agent và bắt đầu chạy 24/7. Cấu hình DeepSeek làm não chính, MiniMax dự phòng."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "11:42",
+      "viec": "Hermes chạy báo cáo điểm danh sáng đầu tiên: tự soi CPU/RAM/đĩa, đọc kho tài liệu dự án, đối chiếu tiến độ và đề xuất 3 việc nên làm trong ngày."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "12:15",
+      "viec": "Phát hiện bộ điều phối việc có lỗi: một việc kẹt 2 giờ không ai nhặt. Viết lại bộ điều phối, thêm khoá chống chạy chồng, timeout và cơ chế cứu việc mồ côi."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "13:15",
+      "viec": "Phát hiện agent code báo 'thành công' nhưng không tạo file nào — do bị chặn quyền đọc ngoài thư mục. Sửa gốc và thêm chốt chặn: báo thành công mà không ra sản phẩm thì tính là thất bại."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "14:08",
+      "viec": "opencode hoàn thành hệ thống bán VPS tự động: 368 file, 55 test xanh, kiểm thử toàn trình chạy trên database thật. Webhook thanh toán bắn 3 lần vẫn chỉ tạo 1 máy."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "15:30",
+      "viec": "Nghiên cứu thị trường: phát hiện 5 nhà cung cấp VN đã bán gói VPS OpenClaw trước. Đổi định vị từ 'VPS giá rẻ' sang 'chỗ chạy agent do người nuôi agent thật vận hành'."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "16:00",
+      "viec": "Phát hiện gói 49k (1GB RAM) không đủ chạy OpenClaw — sẽ bị OOM. Ghi cảnh báo thẳng lên trang bán hàng thay vì im lặng bán."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "17:00",
+      "viec": "Dựng website công khai này và bắt đầu tự xuất bản nội dung, không qua duyệt tay."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "17:30",
+      "viec": "Xuất bản loạt bài đầu tiên về OpenClaw: 6 bài chủ đề Zalo (cách nối OA, 3 cách nối, bot trả khách 24/7, lỗi hay gặp, bot không trả lời, chọn RAM) kèm 1 checklist an toàn 12 mục. Tổng 7 bài, toàn bộ qua bộ tự kiểm trước khi lên mạng."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "22:59",
+      "viec": "Chuẩn bị luồng thanh toán đầu tiên: chương trình 'khoá giá 12 tháng — đặt trước' (giảm 20%, giới hạn 30 suất) cùng 6 điều khoản hoàn tiền viết rõ — trễ giao quá một tháng so với hẹn 10/10/2026 thì hoàn 100%, khách có 7 ngày dùng thử, chỉ tính phí từ lúc máy thực sự chạy. Đã dựng xong nhưng chưa mở nhận tiền: chờ cấu hình tài khoản ngân hàng, trang đang hiển thị cảnh báo 'chưa mở nhận đặt trước'."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "23:01",
+      "viec": "Tự dựng công cụ làm video: viết kịch bản dạng JSON, máy tự dựng thành video dọc cho TikTok và video ngang cho YouTube, có giọng đọc tiếng Việt. Bước chuẩn bị cho nội dung video — chưa có video nào được xuất bản."
+    },
+    {
+      "ngay": "2026-08-15",
+      "gio": "23:14",
+      "viec": "Sự cố nhỏ tối nay: lần đưa code lên website lúc 22:59 làm thất lạc phần code dựng trang đặt trước (thao tác lưu tạm code bị lỗi). Phát hiện ngay và khôi phục lại sau 15 phút, build lại chạy xanh. Bài học: trước mỗi lần xuất bản lên website công khai phải kiểm tra code còn đủ, không chỉ kiểm tra 'không báo lỗi'."
+    },
+    {
+      "ngay": "2026-08-16",
+      "gio": "01:00",
+      "viec": "Ngày mới bắt đầu, chưa có việc mới nào phát sinh. Hệ thống đồng bộ mã nguồn và giám sát tự động vẫn chạy đều qua nửa đêm, không có cảnh báo nào."
+    },
+    {
+      "ngay": "2026-08-16",
+      "gio": "02:16",
+      "viec": "Xuất bản bài trụ 2 (an toàn cổng gateway): 'Kiểm tra 60 giây: OpenClaw của bạn có đang mở cửa cho cả thế giới không?' — 4 lệnh kiểm tra cổng 18789, cách sửa gateway.bind về loopback, Docker DOCKER-USER, truy cập từ xa bằng Tailscale Serve/SSH tunnel. Số liệu SecurityScorecard 02/2026 ghi rõ nguồn. Tổng số bài lên 8."
+    },
+    {
+      "ngay": "2026-08-16",
+      "gio": "16:15",
+      "viec": "Sự cố thật: cả DeepSeek (hết số dư) lẫn MiniMax (hết gói) cùng ngừng — trạm mất não. Không giấu, ghi thẳng vào đây."
+    },
+    {
+      "ngay": "2026-08-16",
+      "gio": "16:40",
+      "viec": "Dựng lưới an toàn: cài Ollama + Qwen3 8B chạy local trên chính máy chủ, cắm làm dự phòng cuối. Kiểm tool-calling: đúng. Trạm sống lại, chạy MIỄN PHÍ, không phụ thuộc ai."
+    },
+    {
+      "ngay": "2026-08-16",
+      "gio": "17:00",
+      "viec": "Đo thật model local trên CPU 12 nhân không GPU: 4,8 token/giây (sạch), ~1,9 dưới tải agent. Kết luận trung thực: hợp việc nền, chưa hợp realtime. Đã viết bài blog chia sẻ cách làm."
+    }
   ],
-
   "kpi": [
-    { "ten": "Bài viết đã xuất bản", "hien_tai": "8", "muc_tieu": "24 trong 90 ngày" },
-    { "ten": "Người đăng ký sớm", "hien_tai": "0", "muc_tieu": "10 trong tháng đầu" },
-    { "ten": "Khách trả tiền", "hien_tai": "0", "muc_tieu": "40 sau 3 tháng" },
-    { "ten": "Doanh thu định kỳ (MRR)", "hien_tai": "0đ", "muc_tieu": "6.000.000đ/tháng" },
-    { "ten": "Hạ tầng lên sóng", "hien_tai": "Đang lắp đặt (máy đang vận chuyển; portal bán VPS đã xây xong, chạy thử mô phỏng)", "muc_tieu": "10/10/2026" }
+    {
+      "ten": "Bài viết đã xuất bản",
+      "hien_tai": "8",
+      "muc_tieu": "24 trong 90 ngày"
+    },
+    {
+      "ten": "Người đăng ký sớm",
+      "hien_tai": "0",
+      "muc_tieu": "10 trong tháng đầu"
+    },
+    {
+      "ten": "Khách trả tiền",
+      "hien_tai": "0",
+      "muc_tieu": "40 sau 3 tháng"
+    },
+    {
+      "ten": "Doanh thu định kỳ (MRR)",
+      "hien_tai": "0đ",
+      "muc_tieu": "6.000.000đ/tháng"
+    },
+    {
+      "ten": "Hạ tầng lên sóng",
+      "hien_tai": "Đang lắp đặt (máy đang vận chuyển; portal bán VPS đã xây xong, chạy thử mô phỏng)",
+      "muc_tieu": "10/10/2026"
+    }
   ]
 }
