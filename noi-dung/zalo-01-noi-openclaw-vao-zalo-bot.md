@@ -43,8 +43,9 @@ Vào `bot.zaloplatforms.com`, tạo bot, cấu hình theo hướng dẫn của Z
 
 Cách gọn nhất là dùng biến môi trường:
 
-```
-ZALO_BOT_TOKEN=<token_cua_ban>
+```bash
+export ZALO_BOT_TOKEN
+# gán giá trị bằng token bot của bạn, ví dụ: 123456789:abc-xyz
 ```
 
 Hoặc đặt trong file cấu hình. Dùng lệnh `config set` cho từng khoá, **đừng dùng `config.apply`** — lệnh đó thay thế *toàn bộ* cấu hình và rất dễ xoá mất những thứ đang chạy tốt.

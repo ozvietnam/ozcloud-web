@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-08-17 21:25",
+  "cap_nhat": "2026-08-17 21:37",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -65,8 +65,8 @@
       "nhan": "Agent chạy 24/7"
     },
     {
-      "so": "6",
-      "nhan": "Cron tự động mỗi ngày/tuần"
+      "so": "7",
+      "nhan": "Lịch tự động — đã ghim lại DeepSeek sau sự cố cấu hình"
     },
     {
       "so": "55",
@@ -185,19 +185,39 @@
     },
     {
       "ngay": "2026-08-17",
-      "gio": "13:05",
+      "gio": "09:27",
+      "viec": "Đăng bài kể lại sự cố hết token ngày 16/08 và cách dựng lưới an toàn bằng model chạy ngay trên máy chủ — kèm số đo thật về tốc độ và RAM, không tô hồng."
+    },
+    {
+      "ngay": "2026-08-17",
+      "gio": "15:57",
+      "viec": "Rà soát và gắn nhãn 'nội dung do AI tạo' cho toàn bộ bài viết trên website, theo Luật Trí tuệ nhân tạo (hiệu lực 01/03/2026)."
+    },
+    {
+      "ngay": "2026-08-17",
+      "gio": "16:07",
+      "viec": "Sự cố chiều nay: 7 lịch tự động đều bị chặn sau khi chuyển não AI sang model chạy trên chính máy — không lịch nào chạy được. Điều tra ra nguyên nhân: đổi cấu hình lớn mà không ghim lại lịch, cộng thêm model chạy CPU (không GPU) quá chậm cho việc gấp. Đến tối đã ghim lại model đám mây DeepSeek cho cả 7 lịch, đang theo dõi các lần chạy tới. Bài học: đổi não AI phải kiểm lại lịch tự động trong cùng một lượt."
+    },
+    {
+      "ngay": "2026-08-17",
+      "gio": "20:05",
       "viec": "Nạp tiền lại: DeepSeek + MiniMax sống lại, kiểm HTTP 200 cả hai. Trạm chuyển về cấu hình 3 lớp chống đứt: DeepSeek (chính) -> MiniMax (dự phòng) -> model local Qwen3 (lưới cuối). Giờ khoẻ hơn trước sự cố."
     },
     {
       "ngay": "2026-08-17",
-      "gio": "21:20",
-      "viec": "Cot moc: OZ Connect (cau noi Zalo cho agent) chay tron mot vong voi NGUOI THAT lan dau. Nguoi dung nhan tin toi Zalo Bot -> cau nhan qua getUpdates -> agent tu tra loi -> nguoi dung thay bot nhan lai. Token that, API Zalo that. Phat hien thuc chien: Zalo getUpdates khong xep hang tin nhu Telegram, phai polling lien tuc hoac cam webhook."
+      "gio": "20:56",
+      "viec": "Công bố dự án cộng đồng 'Chung tay đưa agent vào mọi công việc của người Việt' và hoàn tất bộ hồ sơ mở nguồn OZ Connect theo giấy phép MIT (giấy phép, README công khai, hướng dẫn đóng góp) — cầu nối đa kênh cho agent, thứ mà 28 phần mềm agent lớn đều chưa có sẵn cho Zalo."
+    },
+    {
+      "ngay": "2026-08-17",
+      "gio": "21:25",
+      "viec": "OZ Connect được tái cấu trúc thành cầu đa kênh: tách lõi dùng chung, thêm kênh Telegram bên cạnh Zalo, toàn bộ 25/25 bài kiểm thử tự động xanh. Nói thẳng một giới hạn: chưa chạy được vòng trả lời với người thật vì token bot Zalo thật chưa được tạo — đó là thứ duy nhất còn thiếu, và hướng dẫn lấy token miễn phí đã viết xong."
     }
   ],
   "kpi": [
     {
       "ten": "Bài viết đã xuất bản",
-      "hien_tai": "8",
+      "hien_tai": "10",
       "muc_tieu": "24 trong 90 ngày"
     },
     {
