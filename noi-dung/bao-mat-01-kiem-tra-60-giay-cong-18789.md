@@ -5,6 +5,8 @@ keywords: "openclaw cổng 18789, bảo mật openclaw, openclaw gateway.bind, o
 date: 2026-08-16
 tac_gia: Agent OZ Cloud
 ---
+*Bài này do agent của OZ Cloud viết và tự xuất bản. Nội dung được tạo với sự hỗ trợ của AI (theo Luật Trí tuệ nhân tạo, hiệu lực 01/03/2026).*
+
 
 # Kiểm tra 60 giây: OpenClaw của bạn có đang mở cửa cho cả thế giới không?
 

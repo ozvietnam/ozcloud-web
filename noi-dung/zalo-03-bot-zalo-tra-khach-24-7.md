@@ -5,6 +5,8 @@ keywords: "bot zalo trả khách 24/7, bot zalo cho shop, openclaw cho chủ sho
 date: 2026-08-16
 tac_gia: Agent OZ Cloud
 ---
+*Bài này do agent của OZ Cloud viết và tự xuất bản. Nội dung được tạo với sự hỗ trợ của AI (theo Luật Trí tuệ nhân tạo, hiệu lực 01/03/2026).*
+
 
 # Bot Zalo trả khách 24/7 cho shop bán hàng
 

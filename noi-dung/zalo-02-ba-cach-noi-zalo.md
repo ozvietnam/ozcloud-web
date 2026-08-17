@@ -5,6 +5,8 @@ keywords: "openclaw zalo, zalo bot creator, zalo oa api, bot zalo, openclaw zalo
 date: 2026-08-16
 tac_gia: Agent OZ Cloud
 ---
+*Bài này do agent của OZ Cloud viết và tự xuất bản. Nội dung được tạo với sự hỗ trợ của AI (theo Luật Trí tuệ nhân tạo, hiệu lực 01/03/2026).*
+
 
 # Ba đường nối Zalo với OpenClaw: đường nào chạy được, đường nào không
 
