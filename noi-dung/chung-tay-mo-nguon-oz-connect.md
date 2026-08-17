@@ -14,7 +14,7 @@ Hôm nay OZ Cloud công bố hai điều gắn liền nhau: **mở nguồn OZ Co
 
 ## Vì sao mở nguồn
 
-Chúng tôi khảo sát 28 phần mềm agent. Không một cái nào có sẵn kết nối Zalo — kênh mà gần như mọi doanh nghiệp Việt dùng để chạm khách. Đó là một khoảng trống, và cũng là một lựa chọn về cách làm ăn.
+Chúng tôi khảo sát 28 phần mềm agent. Không một cái nào có sẵn kết nối Zalo OA — kênh mà gần như mọi doanh nghiệp Việt dùng để chạm khách (kết nối Zalo hiện có, như của OpenClaw, chỉ dừng ở Zalo Bot Creator). Đó là một khoảng trống, và cũng là một lựa chọn về cách làm ăn.
 
 Chúng tôi chọn **mở nguồn phần cầu nối** thay vì giữ kín. Lý do thẳng thắn: một cây cầu thì ai đọc tài liệu cũng viết được trong vài tuần — giữ kín không tạo ra lợi thế bền. Thứ tạo ra lợi thế là **niềm tin và kinh nghiệm vận hành**. Nên chúng tôi cho đi phần code, và giữ lại phần khó sao chép: vận hành nó chạy 24/7 an toàn, thẩm định, và tư vấn đúng cho từng bài toán.
 
