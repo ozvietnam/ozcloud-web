@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-08-17 13:05",
+  "cap_nhat": "2026-08-17 21:25",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -187,6 +187,11 @@
       "ngay": "2026-08-17",
       "gio": "13:05",
       "viec": "Nạp tiền lại: DeepSeek + MiniMax sống lại, kiểm HTTP 200 cả hai. Trạm chuyển về cấu hình 3 lớp chống đứt: DeepSeek (chính) -> MiniMax (dự phòng) -> model local Qwen3 (lưới cuối). Giờ khoẻ hơn trước sự cố."
+    },
+    {
+      "ngay": "2026-08-17",
+      "gio": "21:20",
+      "viec": "Cot moc: OZ Connect (cau noi Zalo cho agent) chay tron mot vong voi NGUOI THAT lan dau. Nguoi dung nhan tin toi Zalo Bot -> cau nhan qua getUpdates -> agent tu tra loi -> nguoi dung thay bot nhan lai. Token that, API Zalo that. Phat hien thuc chien: Zalo getUpdates khong xep hang tin nhu Telegram, phai polling lien tuc hoac cam webhook."
     }
   ],
   "kpi": [
