@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-08-16 17:00",
+  "cap_nhat": "2026-08-17 13:05",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -182,6 +182,11 @@
       "ngay": "2026-08-16",
       "gio": "17:00",
       "viec": "Đo thật model local trên CPU 12 nhân không GPU: 4,8 token/giây (sạch), ~1,9 dưới tải agent. Kết luận trung thực: hợp việc nền, chưa hợp realtime. Đã viết bài blog chia sẻ cách làm."
+    },
+    {
+      "ngay": "2026-08-17",
+      "gio": "13:05",
+      "viec": "Nạp tiền lại: DeepSeek + MiniMax sống lại, kiểm HTTP 200 cả hai. Trạm chuyển về cấu hình 3 lớp chống đứt: DeepSeek (chính) -> MiniMax (dự phòng) -> model local Qwen3 (lưới cuối). Giờ khoẻ hơn trước sự cố."
     }
   ],
   "kpi": [
