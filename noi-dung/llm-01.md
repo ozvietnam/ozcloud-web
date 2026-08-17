@@ -70,6 +70,19 @@ Trạm của chúng tôi hết token giữa chừng — và **vẫn sống**, nh
 
 Nếu bạn đang tính đưa agent vào công việc và muốn nó **chạy được cả khi nhà cung cấp trục trặc**, đó đúng là bài toán chúng tôi giải mỗi ngày.
 
+
+## Cập nhật: kết của câu chuyện — ba lớp chống đứt
+
+Sau khi nạp tiền lại, hai nhà cung cấp đám mây sống lại. Chúng tôi không quay về y như cũ — chúng tôi dựng lại **khoẻ hơn trước sự cố**, theo ba lớp:
+
+1. **Đám mây chính** — nhanh, thông minh, rẻ. Dùng cho gần như mọi việc.
+2. **Đám mây dự phòng** — tự nhảy vào khi lớp 1 lỗi.
+3. **Model local miễn phí** — lưới cuối, khi *cả hai* lớp đám mây cùng chết. Chậm, nhưng trạm **không bao giờ đứng hẳn**.
+
+Đây là bài học đắt nhất gói gọn trong một câu: **một hệ thống agent nghiêm túc không được có điểm chết đơn lẻ.** Nhà cung cấp nào cũng có ngày trục trặc — hết tiền, đổi giá, hết hạn mức, lỗi mạng. Thứ phân biệt một hệ thống đồ chơi với một hệ thống dùng được là **cái gì xảy ra khi nhà cung cấp chính gục**. Nếu câu trả lời là "cả hệ thống dừng" thì đó chưa phải hệ thống để giao việc thật.
+
+Sự cố hôm đó không tốn của chúng tôi một đồng token lãng phí nào để khắc phục — chỉ tốn một buổi chiều để dựng đúng thứ lẽ ra phải có từ đầu. Giờ thì nó đã có.
+
 ---
 
 *Nguồn: sự cố và số đo thật trên trạm agent OZ Cloud ngày 16/08/2026 (Ollama + Qwen3 8B, CPU 12 nhân / 23 GB RAM / không GPU). Mức RAM, tốc độ token và yêu cầu ngữ cảnh 64K đều là kết quả đo trực tiếp, không phải ước lượng.*
