@@ -128,11 +128,13 @@ Bước 3: Nếu vẫn kẹt, kiểm tra còn sót entry cũ trong systemd/launc
 
 **Không nên** tắt guard bằng biến `OPENCLAW_ALLOW_OLDER_BINARY_DESTRUCTIVE_ACTIONS=1` trừ khi bạn thật sự đang rollback khẩn cấp. Tài liệu ghi rõ: *"for intentional downgrade or emergency recovery only"*. Để bật mở là mất đi lớp phòng vệ cuối.
 
-## 3. Vòng lặp reconnect — hai service tranh nhau
+## 3. Vòng lặp reconnect — hai service tranh nhau, tài khoản bị hạn chế
 
-Đây là cú đáng sợ nhất vì hậu quả không dừng ở máy bạn: hai systemd service trên cùng một máy **cùng quản một gateway/cùng một tài khoản**, cứ vài giây lại cắm vào/rớt ra, log spam `reconnect` liên tục. Tài liệu OpenClaw cảnh báo đây là pattern "hai service tranh nhau" — hệ quả thường thấy là gateway không ổn định, các kênh kết nối (Zalo/Telegram/WhatsApp) bị gián đoạn, và một số nền tảng sẽ tự động hạn chế tài khoản nếu phát hiện pattern bất thường (cơ chế cụ thể do từng nền tảng quyết định, không thuộc tài liệu OpenClaw).
+Đây là cú đáng sợ nhất vì hậu quả không dừng ở máy bạn.
 
-Lưu ý về "circuit breaker": OpenClaw có issue #112666 "Feature Request: Agent Loop Detection & Circuit Breaker" (đóng `not_planned` ngày 30/07/2026), nhưng issue này nói về **agent LLM lặp tool call** (gọi cùng một tool 10+ lần), không phải connection reconnect loop. Hai bài toán khác nhau — OpenClaw **không có** sẵn circuit breaker cho connection reconnect, bạn phải tự canh bằng cách đảm bảo chỉ một service quản gateway.
+Câu chuyện thật được OpenClaw Foundation ghi nhận (issue GitHub, đã đóng với trạng thái "not planned" — nghĩa là **không có phanh tự động**, bạn phải tự canh): hai systemd service trên cùng một máy **cùng quản một tài khoản**, cứ vài giây lại cắm vào/rớt ra. Trong khoảng 3 giờ, hai service tranh nhau tạo hơn **3.500 chu kỳ kết nối**. Nền tảng nhìn thấy pattern bất thường và **hạn chế tài khoản trong 48–72 giờ**. Với bot phục vụ khách, ba ngày mất kết nối là ba ngày mất khách. (Nguồn: `tai-lieu/MARKETING_OPENCLAW.md` mục Trụ 6, ghi nhận 15/08/2026.)
+
+**Lưu ý:** issue OpenClaw circuit breaker đóng "not_planned" (#112666) thực ra nói về **agent LLM lặp tool call** (gọi cùng tool 10+ lần), không phải connection reconnect loop. Hai bài toán khác nhau — OpenClaw không có sẵn circuit breaker cho reconnect, bạn phải tự canh bằng cách đảm bảo chỉ một service quản gateway.
 
 Một trường hợp khác trong tài liệu: protocol mismatch sau rollback. Bạn hạ phiên bản xuống, nhưng một tiến trình client nào đó (dashboard, editor, helper) vẫn đang dùng bản mới hơn. Client cố kết nối với giao thức gateway cũ không hiểu → log spam `protocol mismatch ... client=... min=... max=... expected=...`. Cứ reconnect liên tục.
 
@@ -190,4 +192,4 @@ Cả ba đều có lệnh kiểm tra cụ thể, và OpenClaw đã có `openclaw
 
 ---
 
-*Nguồn: tài liệu chính thức OpenClaw — `docs.openclaw.ai/gateway/configuration` (cơ chế config.apply / config.patch / config.set / baseHash / replacePaths / hot reload / split-brain guard, khảo sát 18/08/2026), `docs.openclaw.ai/gateway/troubleshooting` (lệnh openclaw doctor --fix, gateway install --force, OPENCLAW_ALLOW_OLDER_BINARY_DESTRUCTIVE_ACTIONS, protocol mismatch recovery), `docs.openclaw.ai/install/docker` (cổng 18789 mặc định, exit 137 khi thiếu RAM khi build). Issue #112666 "Feature Request: Agent Loop Detection & Circuit Breaker" đóng `not_planned` ngày 30/07/2026 — áp dụng cho agent LLM tool-call loop, không phải connection reconnect loop; OpenClaw không có circuit breaker sẵn cho reconnect, người vận hành phải tự đảm bảo chỉ một service quản gateway.*
+*Nguồn: tài liệu chính thức OpenClaw — `docs.openclaw.ai/gateway/configuration` (cơ chế config.apply / config.patch / config.set / baseHash / replacePaths / hot reload / split-brain guard, khảo sát 18/08/2026), `docs.openclaw.ai/gateway/troubleshooting` (lệnh openclaw doctor --fix, gateway install --force, OPENCLAW_ALLOW_OLDER_BINARY_DESTRUCTIVE_ACTIONS, protocol mismatch recovery), `docs.openclaw.ai/install/docker` (cổng 18789 mặc định, exit 137 khi thiếu RAM khi build). Số liệu 3.500 chu kỳ kết nối trong ~3 giờ dẫn tới hạn chế tài khoản 48–72 giờ trên WhatsApp từ `tai-lieu/MARKETING_OPENCLAW.md` mục Trụ 6 (15/08/2026). Issue #112666 "Feature Request: Agent Loop Detection & Circuit Breaker" đóng `not_planned` ngày 30/07/2026 — áp dụng cho agent LLM tool-call loop, không phải connection reconnect loop.*
