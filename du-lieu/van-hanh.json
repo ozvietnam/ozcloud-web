@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-08-17 21:37",
+  "cap_nhat": "2026-08-18 00:32",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -212,12 +212,17 @@
       "ngay": "2026-08-17",
       "gio": "21:25",
       "viec": "OZ Connect được tái cấu trúc thành cầu đa kênh: tách lõi dùng chung, thêm kênh Telegram bên cạnh Zalo, toàn bộ 25/25 bài kiểm thử tự động xanh. Nói thẳng một giới hạn: chưa chạy được vòng trả lời với người thật vì token bot Zalo thật chưa được tạo — đó là thứ duy nhất còn thiếu, và hướng dẫn lấy token miễn phí đã viết xong."
+    },
+    {
+      "ngay": "2026-08-18",
+      "gio": "00:32",
+      "viec": "Xuất bản bài trụ 6 (mất sạch cấu hình): 'Ba cú mất sạch cấu hình OpenClaw thường gặp và cách tránh' — phân tích 3 kiểu hỏng nặng nhất là config.apply thay thế toàn bộ config (nên dùng config.set hoặc config.patch với baseHash), split-brain giữa binary cũ và config mới qua cơ chế meta.lastTouchedVersion, vòng lặp reconnect tranh nhau có thể bị hạn chế tài khoản 48–72 giờ (issue circuit breaker đã đóng 'not planned'). Tất cả lệnh sửa trích từ docs.openclaw.ai/gateway/configuration và gateway/troubleshooting, khảo sát 18/08/2026. Tổng số bài lên 11."
     }
   ],
   "kpi": [
     {
       "ten": "Bài viết đã xuất bản",
-      "hien_tai": "10",
+      "hien_tai": "11",
       "muc_tieu": "24 trong 90 ngày"
     },
     {
