@@ -18,7 +18,7 @@ Chúng tôi khảo sát 28 phần mềm agent. Không một cái nào có sẵn 
 
 Chúng tôi chọn **mở nguồn phần cầu nối** thay vì giữ kín. Lý do thẳng thắn: một cây cầu thì ai đọc tài liệu cũng viết được trong vài tuần — giữ kín không tạo ra lợi thế bền. Thứ tạo ra lợi thế là **niềm tin và kinh nghiệm vận hành**. Nên chúng tôi cho đi phần code, và giữ lại phần khó sao chép: vận hành nó chạy 24/7 an toàn, thẩm định, và tư vấn đúng cho từng bài toán.
 
-**OZ Connect** — tên của cầu nối đa kênh này — được phát hành theo giấy phép **MIT**: ai cũng dùng được, sửa được, bán lại được. Hiện có kênh **Zalo**, sắp có **Telegram, Messenger, Viber**. Một cầu, mọi kênh chạm khách.
+**OZ Connect** — tên của cầu nối đa kênh này — được phát hành theo giấy phép **MIT**: ai cũng dùng được, sửa được, bán lại được. Hiện có **Zalo và Telegram** (đã kiểm thử, 47 test tự động), sắp có **Messenger, Viber**. Một cầu, mọi kênh chạm khách.
 
 ## Triết lý của dự án: mỗi bài toán của khách là một kinh nghiệm thực chiến
 
@@ -38,10 +38,10 @@ Vì thế dự án này là **hai chiều**: khách nhận được một agent 
 
 ## Nói thẳng những gì chưa xong
 
-Đúng tinh thần chúng tôi làm từ đầu: OZ Connect mới ở bản đầu. Kênh Zalo đã chạy và có kiểm thử thật; Telegram đang hoàn thiện; Messenger và Viber còn ở phía trước và chúng tôi sẽ đọc tài liệu API gốc trước khi xây, không đoán. Cầu này cũng chỉ nối tới **Zalo Bot Creator**, chưa nối Zalo OA — chúng tôi đã nói rõ ranh giới đó.
+Đúng tinh thần chúng tôi làm từ đầu: OZ Connect mới ở bản đầu. Kênh Zalo đã chạy và có kiểm thử thật; Telegram đã có kèm 47 test tự động; Messenger và Viber còn ở phía trước và chúng tôi sẽ đọc tài liệu API gốc trước khi xây, không đoán. Cầu này cũng chỉ nối tới **Zalo Bot Creator**, chưa nối Zalo OA — chúng tôi đã nói rõ ranh giới đó.
 
 Chúng tôi công bố khi mọi thứ chưa hoàn hảo, vì một dự án cộng đồng thì lớn lên cùng cộng đồng, không phải chờ hoàn hảo rồi mới mở cửa.
 
 ---
 
-*OZ Connect phát hành theo giấy phép MIT, do OZ Cloud khởi xướng và bảo trì. Đường dẫn mã nguồn sẽ cập nhật tại đây ngay khi bản đa kênh hoàn tất kiểm thử.*
+*OZ Connect phát hành theo giấy phép MIT, do OZ Cloud khởi xướng và bảo trì. Mã nguồn công khai: https://github.com/ozvietnam/oz-connect (giấy phép MIT).*
