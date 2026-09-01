@@ -41,3 +41,5 @@ Build xanh: `node build.mjs` in ra `Bài viết: 7`, đủ 10 trang. KPI "Bài v
 - **`tai-lieu/` nằm trong `.gitignore`** nên người đọc sau không thấy nguồn ngay trong repo công khai; nếu cần minh bạch hết mức thì cân nhắc tách một bản "nguồn công khai" riêng. Hiện để vậy để tránh lộ kế hoạch nội bộ.
 - Bài gốc có chỗ đánh dấu `[ANH: ảnh chụp màn hình ...]` trong `zalo-01` (chưa có ảnh). Đã đăng nội dung; ảnh minh hoạ là việc sau, không chặn xuất bản.
 - Số liệu bảo mật (40.214 instance, tỉ lệ RCE...) có ngày khảo sát 09/02/2026 ghi sẵn trong bài — mục đích là người đọc biết độ cũ của số liệu.
+
+2026-09-01 · `ai-agent-tong-hop-bao-cao-tuan-tu-csv` · Nguồn chính: OpenClaw Automations, OpenClaw Docker, DeepSeek API Pricing, Luật 91/2025/QH15 · Suýt trượt mục 1: tài liệu Docker hiện hành yêu cầu 6 GB khi tự build, khác mốc cũ trong cẩm nang; bài đã tách rõ build từ mã nguồn và dùng image dựng sẵn.
