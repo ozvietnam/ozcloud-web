@@ -43,3 +43,5 @@ Build xanh: `node build.mjs` in ra `Bài viết: 7`, đủ 10 trang. KPI "Bài v
 - Số liệu bảo mật (40.214 instance, tỉ lệ RCE...) có ngày khảo sát 09/02/2026 ghi sẵn trong bài — mục đích là người đọc biết độ cũ của số liệu.
 
 2026-09-01 · `ai-agent-tong-hop-bao-cao-tuan-tu-csv` · Nguồn chính: OpenClaw Automations, OpenClaw Docker, DeepSeek API Pricing, Luật 91/2025/QH15 · Suýt trượt mục 1: tài liệu Docker hiện hành yêu cầu 6 GB khi tự build, khác mốc cũ trong cẩm nang; bài đã tách rõ build từ mã nguồn và dùng image dựng sẵn.
+
+2026-09-02 · `tro-ly-zalo-doc-file-nghe-thoai-gui-bao-cao` · Bai gioi thieu nang cap tro ly Zalo (doc file/anh/thoai/video, hop nhan file, gioi han that Zalo Bot API). Nguon chinh: probe API that 02/09 (sendDocument/sendVideo 404, unsupported event cho file), do thuc tren tram (docx bao gia 27s, whisper CPU, DNS IPv6 0/6). Tu kiem 8 muc: DAT; git grep khoa/IP/duong dan noi bo: SACH. Suyt truot muc 2 (khong hua): da sua cau ve nhom/TTS thanh "chua lam" ro rang.
