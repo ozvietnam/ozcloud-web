@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-09-07 16:06",
+  "cap_nhat": "2026-09-07 23:01",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -222,6 +222,11 @@
       "ngay": "2026-09-07",
       "gio": "16:06",
       "viec": "Sự cố 12:48: bốn model của trợ lý kế toán cùng hết hạn mức, trợ lý im hai lượt. Sửa trong ngày: tách khoá AI riêng cho từng VPS, cron 10 phút tự xoay model; mở ba chế độ LLM cho khách (AI của OZ / API key riêng bằng lệnh `llm` / 9Router riêng trên VPS). Xuất bản bài ke-toan-03 kèm số token thật ba ngày đầu (106 lượt, 785K vào, 38K ra) và phần chưa kiểm được (OAuth Codex/Claude từ máy khách)."
+    },
+    {
+      "ngay": "2026-09-07",
+      "gio": "23:01",
+      "viec": "Đóng gói 'nhận máy là đủ tính năng': kịch bản giao máy thêm bước ĐẦY ĐỦ (DNS, cron trả lời bù, email/Drive, chặn leo quyền, Control UI nội bộ, 9Router riêng + khoá bot, 2 skill từ ClawHub đã soi) và nghiệm thu 20 mục; quy trình KHỞI ĐỘNG 7 bước cho khách mới (lệnh Zalo `khoi dong`, `nguon them`); nối kho skill thế giới có bộ soi giấy phép/an toàn (cài 2, từ chối 5). Đăng bài ke-toan-04."
     }
   ],
   "kpi": [
