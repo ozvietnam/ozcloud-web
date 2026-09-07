@@ -29,9 +29,15 @@ Mọi thứ dưới đây đang chạy thật trên trạm của OZ Cloud, khôn
 
 **Đọc file PDF, Word, Excel, CSV.** Trợ lý trích chữ (PDF qua lớp chữ của file, Word cả bảng biểu, Excel tối đa năm sheet và hai trăm dòng mỗi sheet), cắt ở khoảng mười hai nghìn ký tự rồi trả lời theo câu hỏi. Thử nghiệm thật với một file Word báo giá ba mặt hàng: trợ lý tính đúng tổng 100.000 CNY, tách đúng điều khoản FOB, cọc 30%, giao 12–15 ngày, hết 27 giây kể cả thời gian đọc file. PDF dạng ảnh scan chưa đọc được — trợ lý sẽ nói thẳng là cần OCR thay vì bịa.
 
+**Lưu ý: file gửi thẳng qua Zalo Bot không chuyển được — phải qua hộp nhận file (xem phần bức tường bên dưới).**
+
 **Nghe tin thoại.** Tin thoại được chuyển thành chữ bằng mô hình nhận dạng giọng nói chạy ngay trên máy của OZ Cloud (không gửi giọng của bạn ra dịch vụ bên ngoài), rồi xử lý *y như bạn gõ*: nói "giao việc đo RAM Aider" cũng thành việc thật. Chạy bằng CPU nên một đoạn mười giây mất khoảng năm đến mười lăm giây.
 
+**Lưu ý: voice gửi thẳng qua Zalo Bot không trả lời — tin thoại phải đến qua hộp nhận file hoặc link.**
+
 **Xem video ngắn.** Trợ lý cắt một khung hình cho mô hình nhìn và tách lời thoại để nghe. Đủ để trả lời "video này nói về cái gì", không đủ để phân tích từng cảnh.
+
+**Lưu ý: video gửi thẳng qua Zalo Bot không trả lời — phải qua hộp nhận file hoặc link.**
 
 **Đọc trang web và file qua link.** Dán link bài viết, trợ lý tự tải trang về đọc. Dán link file PDF/Word/Excel hoặc link chia sẻ Google Drive/Docs/Sheets (đã mở quyền xem), trợ lý tải file về đọc như file đính kèm.
 
