@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-08-28 15:31",
+  "cap_nhat": "2026-09-07 16:06",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -217,6 +217,11 @@
       "ngay": "2026-08-18",
       "gio": "00:32",
       "viec": "Xuất bản bài trụ 6 (mất sạch cấu hình): 'Ba cú mất sạch cấu hình OpenClaw thường gặp và cách tránh' — phân tích 3 kiểu hỏng nặng nhất là config.apply thay thế toàn bộ config (nên dùng config.set hoặc config.patch với baseHash), split-brain giữa binary cũ và config mới qua cơ chế meta.lastTouchedVersion, vòng lặp reconnect tranh nhau có thể bị hạn chế tài khoản 48–72 giờ (issue circuit breaker đã đóng 'not planned'). Tất cả lệnh sửa trích từ docs.openclaw.ai/gateway/configuration và gateway/troubleshooting, khảo sát 18/08/2026. Tổng số bài lên 11."
+    },
+    {
+      "ngay": "2026-09-07",
+      "gio": "16:06",
+      "viec": "Sự cố 12:48: bốn model của trợ lý kế toán cùng hết hạn mức, trợ lý im hai lượt. Sửa trong ngày: tách khoá AI riêng cho từng VPS, cron 10 phút tự xoay model; mở ba chế độ LLM cho khách (AI của OZ / API key riêng bằng lệnh `llm` / 9Router riêng trên VPS). Xuất bản bài ke-toan-03 kèm số token thật ba ngày đầu (106 lượt, 785K vào, 38K ra) và phần chưa kiểm được (OAuth Codex/Claude từ máy khách)."
     }
   ],
   "kpi": [
