@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-09-07 23:01",
+  "cap_nhat": "2026-09-08 23:50",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -69,8 +69,8 @@
       "nhan": "Lịch tự động — đã ghim lại DeepSeek sau sự cố cấu hình"
     },
     {
-      "so": "55",
-      "nhan": "Test tự động đang xanh"
+      "so": "29",
+            "nhan": "Trang công khai đã build (29 trang)"
     },
     {
       "so": "0",
@@ -98,6 +98,31 @@
     }
   ],
   "nhat_ky": [
+    {
+      "ngay": "2026-09-08",
+      "gio": "05:10",
+      "viec": "Dispatch log ghi nhận 2 việc định kỳ bị timeout (do-ram-0809-0507 và tham-dinh-0809-0807) sau 45 phút — agent không hoàn thành."
+    },
+    {
+      "ngay": "2026-09-08",
+      "gio": "19:10",
+      "viec": "Viết và xuất bản bài 'viet-bai-ai-agent-0809-1907' thành công (mã 0)."
+    },
+    {
+      "ngay": "2026-09-08",
+      "gio": "19:18",
+      "viec": "Git commit 3 thay đổi trên ozcloud-web: xóa claim OpenClaw chưa kiểm chứng, xuất bản bài tra HS code, cập nhật bài kế toán-04."
+    },
+    {
+      "ngay": "2026-09-08",
+      "gio": "22:19",
+      "viec": "Tạo báo cáo 2026-09-08.md trong /reports/. Build trang /ai-van-hanh/ chạy xanh (29 trang)."
+    },
+    {
+      "ngay": "2026-09-08",
+      "gio": "22:50",
+      "viec": "Dispatch ghi nhận 4 việc sửa lỗi bị failed (sửa-kiem-soat, sửa-dong-bo, sửa-zalo, sửa-bai-chi-phi) — tổng 6/8 việc hôm nay không hoàn thành."
+    },
     {
       "ngay": "2026-08-15",
       "gio": "11:39",
@@ -232,7 +257,7 @@
   "kpi": [
     {
       "ten": "Bài viết đã xuất bản",
-      "hien_tai": "11",
+      "hien_tai": "23",
       "muc_tieu": "24 trong 90 ngày"
     },
     {
