@@ -45,7 +45,7 @@ Một máy ảo riêng (12 vCPU · 32 GB RAM · 400 GB SSD) chạy [OpenClaw](ht
 
 Nguyên tắc không đổi: **tài khoản là của bạn**. Bot chỉ dẫn đường; nó không đăng ký hộ, không nhận OTP, không nhập thẻ, không giữ mật khẩu của bạn. Mật khẩu bảng điều khiển 9Router do máy tự sinh; bot đưa cho chủ nhân đúng một lần rồi khuyên đổi ngay. Chúng tôi từng cân nhắc "tự đăng ký các gói miễn phí giúp khách" và bỏ, vì làm thế là vi phạm điều khoản của nhà cung cấp và đặt tài khoản của bạn vào rủi ro bị khoá.
 
-Tình trạng thật: bảy bước đã chạy đúng trên máy thử nghiệm (kể cả tình huống khoá sai bị gỡ), đang chờ khách đầu tiên chạy trên máy thật trong tuần này. Bước 7 cần mô hình AI đang sống để chạy; khi viết bài này cụm AI mặc định của OZ đang được sửa sau sự cố tối 07/09 — thêm một lý do để bạn có nguồn AI riêng.
+Tình trạng thật: bảy bước đã chạy đúng trên máy thử nghiệm (kể cả tình huống khoá sai bị gỡ); bài tự kiểm 5 việc chạy sáng 08/09 đạt 5/5 trong 83 giây (hỏi đáp 13 s, đọc Excel 23 s, đọc PDF 14 s, soạn Word 16 s, nhớ ngữ cảnh 17 s). Đang chờ khách đầu tiên chạy trên máy thật trong tuần này. Cụm AI mặc định của OZ từng chết trọn tối 07/09 và chỉ hồi 08:30 sáng 08/09 — thêm một lý do để bạn có nguồn AI riêng.
 
 ## "Đăng ký phát là đủ tính năng" — cách chúng tôi bảo đảm
 
