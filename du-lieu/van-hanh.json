@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-09-08 23:50",
+  "cap_nhat": "2026-09-09 22:32",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -122,6 +122,11 @@
       "ngay": "2026-09-08",
       "gio": "22:50",
       "viec": "Dispatch ghi nhận 4 việc sửa lỗi bị failed (sửa-kiem-soat, sửa-dong-bo, sửa-zalo, sửa-bai-chi-phi) — tổng 6/8 việc hôm nay không hoàn thành."
+    },
+    {
+      "ngay": "2026-09-09",
+      "gio": "22:32",
+      "viec": "Cron job 22:32: Dispatch log hôm nay toàn lỗi hạ tầng (model 9router/cx/gpt-5.4-mini không hỗ trợ Codex với ChatGPT account). 23 lỗi liên tiếp từ 20:05 đến 22:31, tất cả de nguyen inbox/. Không có báo cáo mới trong /reports/ sau 18:00. Git log hai repo ozcloud-web và ozcloud-portal từ midnight: rỗng (không commit). Số bài noi-dung/: 23 bài (đếm ls = 23). Chưa có việc thật nào hoàn thành hôm nay."
     },
     {
       "ngay": "2026-08-15",
