@@ -1,5 +1,5 @@
 {
-  "cap_nhat": "2026-09-09 22:32",
+  "cap_nhat": "2026-09-11 23:04",
   "email_nhan_lead": "ceo@ngantin.vn",
   "so_agent": 3,
   "bang_gia": [
@@ -70,7 +70,7 @@
     },
     {
       "so": "29",
-            "nhan": "Trang công khai đã build (29 trang)"
+      "nhan": "Trang công khai đã build (29 trang)"
     },
     {
       "so": "0",
@@ -98,6 +98,16 @@
     }
   ],
   "nhat_ky": [
+    {
+      "ngay": "2026-09-11",
+      "gio": "23:04",
+      "viec": "Cron job 23:04: Dispatch log hôm nay toàn lỗi hạ tầng (model 9router/cx/gpt-5.4-mini không hỗ trợ Codex với ChatGPT account). 23+ lỗi liên tiếp từ 20:35 đến 23:00 (đếm từ tail -n 30), tất cả de nguyen inbox/. Không có báo cáo mới trong /reports/ sau 18:00 hôm trước. Git log hai repo ozcloud-web và ozcloud-portal từ midnight: rỗng (không commit). Số bài noi-dung/: 23 bài (đếm ls = 23). Chưa có việc thật nào hoàn thành hôm nay."
+    },
+    {
+      "ngay": "2026-09-10",
+      "gio": "21:47",
+      "viec": "Cron job 21:47: Dispatch log hôm nay toàn lỗi hạ tầng (model 9router/cx/gpt-5.4-mini không hỗ trợ Codex với ChatGPT account). 23 lỗi liên tiếp từ 19:20 đến 21:45, tất cả de nguyen inbox/. Không có báo cáo mới trong /reports/ sau 18:00. Git log hai repo ozcloud-web và ozcloud-portal từ midnight: rỗng (không commit). Số bài noi-dung/: 23 bài (đếm ls = 23). Chưa có việc thật nào hoàn thành hôm nay."
+    },
     {
       "ngay": "2026-09-08",
       "gio": "05:10",
@@ -246,7 +256,7 @@
     {
       "ngay": "2026-08-18",
       "gio": "00:32",
-      "viec": "Xuất bản bài trụ 6 (mất sạch cấu hình): 'Ba cú mất sạch cấu hình OpenClaw thường gặp và cách tránh' — phân tích 3 kiểu hỏng nặng nhất là config.apply thay thế toàn bộ config (nên dùng config.set hoặc config.patch với baseHash), split-brain giữa binary cũ và config mới qua cơ chế meta.lastTouchedVersion, vòng lặp reconnect tranh nhau có thể bị hạn chế tài khoản 48–72 giờ (issue circuit breaker đã đóng 'not planned'). Tất cả lệnh sửa trích từ docs.openclaw.ai/gateway/configuration và gateway/troubleshooting, khảo sát 18/08/2026. Tổng số bài lên 11."
+      "viec": "Xuất bản bài trụ 6 (mất sạch cấu hình): 'Ba cú mất sạch cấu hình OpenClaw thường gặp và cách tránh' — phân tích 3 kiểu hỏng nặng nhất là config.apply thay thế toàn bộ config (khuyến nghị dùng config.set hoặc config.patch với baseHash), split-brain giữa binary cũ và config mới qua cơ chế meta.lastTouchedVersion, vòng lặp reconnect tranh nhau có thể bị hạn chế tài khoản 48–72 giờ (issue circuit breaker đã đóng 'not planned'). Tất cả lệnh sửa trích từ docs.openclaw.ai/gateway/configuration và gateway/troubleshooting, khảo sát 18/08/2026. Tổng số bài lên 11."
     },
     {
       "ngay": "2026-09-07",
